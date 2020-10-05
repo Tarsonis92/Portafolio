@@ -38,7 +38,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxID_Tipo = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -127,13 +127,13 @@
             this.textBox4.Size = new System.Drawing.Size(199, 20);
             this.textBox4.TabIndex = 14;
             // 
-            // comboBox1
+            // cbxID_Tipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(617, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cbxID_Tipo.FormattingEnabled = true;
+            this.cbxID_Tipo.Location = new System.Drawing.Point(617, 41);
+            this.cbxID_Tipo.Name = "cbxID_Tipo";
+            this.cbxID_Tipo.Size = new System.Drawing.Size(146, 21);
+            this.cbxID_Tipo.TabIndex = 15;
             // 
             // btnAgregar
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxID_Tipo);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -194,6 +194,7 @@
             this.Controls.Add(this.dgvTabla);
             this.Name = "Editar_Usuario";
             this.Text = "Editar_Usuario";
+            this.Load += new System.EventHandler(this.Editar_Usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,7 +213,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxID_Tipo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;

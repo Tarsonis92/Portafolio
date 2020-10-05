@@ -32,11 +32,6 @@ namespace Clases
         public string Correo { get => correo; set => correo = value; }
 
 
-        public void pruebasLocas() { 
-        
        
-        
-        }
-
     }
 }

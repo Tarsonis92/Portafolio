@@ -48,8 +48,24 @@ namespace Portafolio
 
         }
 
+        public DataTable Datos()
+        {
+
+            DataTable data = new DataTable();
+            string query = "SELECT ID_TIPO,NOMBRE FROM TIPO_USUARIO";
+            OracleCommand command = new OracleCommand(query, con);
+            OracleDataAdapter da = new OracleDataAdapter(command);
+            da.Fill(data);
+            return data;
+
+        }
 
 
-
+        private void Editar_Usuario_Load(object sender, EventArgs e)
+        {
+            cbxID_Tipo.DataSource = Datos();
+            cbxID_Tipo.DisplayMember = "NOMBRE";
+            cbxID_Tipo.ValueMember = "NOMBRE";
+        }
     }
 }
