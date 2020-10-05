@@ -6,10 +6,11 @@ using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace BD
 {
-    class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
+    public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
     {
         Usuario dto = new Usuario();
 
@@ -26,7 +27,7 @@ namespace BD
                     {
 
                         comand.CommandType = System.Data.CommandType.StoredProcedure;
-                        comand.Parameters.Add(new OracleParameter("P_ID_USUARIO", OracleType.VarChar)).Value = dto.Id_usuario;
+                        comand.Parameters.Add(new OracleParameter("P_ID_USUARIO", OracleType.Int32)).Value = Convert.ToInt32(dto.Id_usuario);
                         comand.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = dto.Nombre;
                         comand.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = dto.Apellido;
                         comand.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = dto.Contrasena;
@@ -104,7 +105,7 @@ namespace BD
                         command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = dto.Apellido;
                         command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = dto.Contrasena;
                         command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = dto.Correo;
-                        command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.VarChar)).Value = dto.Id_tipo;
+                        command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = Convert.ToInt32(dto.Id_tipo);
                         command.Parameters.Add(new OracleParameter("P_RESULT",OracleType.VarChar)).Direction=System.Data.ParameterDirection.Output;
 
                         result = Convert.ToString(command.Parameters["P_RESULT"].Value);

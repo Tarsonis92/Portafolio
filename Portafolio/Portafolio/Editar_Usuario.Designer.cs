@@ -34,10 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.cbxID_Tipo = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -101,33 +101,33 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "ID_Tipo:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtNombre.Location = new System.Drawing.Point(79, 16);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(199, 20);
+            this.txtNombre.TabIndex = 11;
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(348, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtApellido.Location = new System.Drawing.Point(348, 19);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(199, 20);
+            this.txtApellido.TabIndex = 12;
             // 
-            // textBox3
+            // txtContrasena
             // 
-            this.textBox3.Location = new System.Drawing.Point(96, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtContrasena.Location = new System.Drawing.Point(96, 53);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(182, 20);
+            this.txtContrasena.TabIndex = 13;
             // 
-            // textBox4
+            // txtCorreo
             // 
-            this.textBox4.Location = new System.Drawing.Point(348, 56);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 20);
-            this.textBox4.TabIndex = 14;
+            this.txtCorreo.Location = new System.Drawing.Point(348, 56);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(199, 20);
+            this.txtCorreo.TabIndex = 14;
             // 
             // cbxID_Tipo
             // 
@@ -145,6 +145,7 @@
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -203,10 +204,10 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cbxID_Tipo);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -230,10 +231,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.ComboBox cbxID_Tipo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;

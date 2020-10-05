@@ -4,3 +4,9 @@ C:\Users\carlo\source\repos\Portafolio\Clases\obj\Debug\Clases.csprojAssemblyRef
 C:\Users\carlo\source\repos\Portafolio\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\carlo\source\repos\Portafolio\Clases\obj\Debug\Clases.dll
 C:\Users\carlo\source\repos\Portafolio\Clases\obj\Debug\Clases.pdb
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\bin\Debug\Clases.dll
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\bin\Debug\Clases.pdb
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\obj\Debug\Clases.csprojAssemblyReference.cache
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\obj\Debug\Clases.dll
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Clases\obj\Debug\Clases.pdb

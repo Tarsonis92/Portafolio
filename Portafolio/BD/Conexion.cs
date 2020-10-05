@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.OracleClient;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BD
 {
