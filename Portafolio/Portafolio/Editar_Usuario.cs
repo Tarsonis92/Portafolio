@@ -67,5 +67,16 @@ namespace Portafolio
             cbxID_Tipo.DisplayMember = "NOMBRE";
             cbxID_Tipo.ValueMember = "NOMBRE";
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OracleCommand comando = new OracleCommand("SP_DELETE_USUARIO", con);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("P_ID_USUARIO",OracleType.Number).Value=Convert.ToInt32(txtID.Text);
+            comando.ExecuteNonQuery();
+            MessageBox.Show("La fila eliminada satisfactoriamente");
+            con.Close();
+        }
     }
 }
