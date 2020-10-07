@@ -67,7 +67,7 @@ namespace Portafolio
         private void Editar_Usuario_Load(object sender, EventArgs e)
         {
             cbxID_Tipo.DataSource = Datos();
-            cbxID_Tipo.DisplayMember = "ID_TIPO";
+            cbxID_Tipo.DisplayMember = "NOMBRE";
             cbxID_Tipo.ValueMember = "ID_TIPO";
         }
 
@@ -75,16 +75,16 @@ namespace Portafolio
         {
             OracleDataAdapter adaptador = new OracleDataAdapter();
 
-            //con.Open();
-            //OracleCommand comando = new OracleCommand("SP_DELETE_USUARIO", con);
-            //comando.CommandType = System.Data.CommandType.StoredProcedure;
-            //comando.Parameters.Add("P_ID_USUARIO",OracleType.VarChar).Value=txtID.Text;
-            //comando.Parameters.Add("P_CURSOR", OracleType.Cursor).Direction = ParameterDirection.Output;
-            //adaptador.SelectCommand = comando;
-            //comando.ExecuteNonQuery();
-            //MessageBox.Show("La fila eliminada satisfactoriamente");
-            //con.Close();
-            eliminar();
+            con.Open();
+            OracleCommand comando = new OracleCommand("SP_DELETE_USUARIO", con);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("P_ID_USUARIO",OracleType.VarChar).Value=txtID.Text;
+            adaptador.SelectCommand = comando;
+            comando.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("La fila eliminada satisfactoriamente");
+            
+            
         }
 
         public void eliminar()
@@ -98,7 +98,7 @@ namespace Portafolio
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            usuario1.Insertar(Usuario);
+            
             try
             {
 
@@ -122,5 +122,21 @@ namespace Portafolio
 
             con.Close();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            OracleCommand comando = new OracleCommand("SP_ACTUALIZAR_USUARIO", con);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("P_ID_USUARIO", OracleType.VarChar).Value = txtID.Text;
+            comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
+            comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
+            comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
+            comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
+            comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedText);
+            comando.ExecuteNonQuery();
+            MessageBox.Show("Cliente Actualizado");
+            con.Close();
+        }   
     }
 }
