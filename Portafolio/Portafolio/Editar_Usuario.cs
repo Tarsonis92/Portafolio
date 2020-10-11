@@ -73,51 +73,43 @@ namespace Portafolio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            OracleDataAdapter adaptador = new OracleDataAdapter();
-
-            con.Open();
-            OracleCommand comando = new OracleCommand("SP_DELETE_USUARIO", con);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("P_ID_USUARIO",OracleType.VarChar).Value=txtID.Text;
-            adaptador.SelectCommand = comando;
-            comando.ExecuteNonQuery();
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = Convert.ToInt32(txtID_Usuario.Text);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Usuario Eliminado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error algo salio mal" + ex);
+            }
             con.Close();
-            MessageBox.Show("La fila eliminada satisfactoriamente");
             
-            
-        }
-
-        public void eliminar()
-        {
-            con.Open();
-            DAOUsuario usuario = new DAOUsuario();
-            usuario.Eliminar(txtID.Text);
-            con.Close();
-             
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
-
                 con.Open();
-                OracleCommand comando = new OracleCommand("SP_INSERTAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("INSERTAR_USUARIO", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.VarChar).Value = txtID.Text;
                 comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
                 comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
                 comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
                 comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedText);
+                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedValue);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Cliente Agregado");
+                MessageBox.Show("Usuario Agregado");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error!, Algo salio Mal");
+                MessageBox.Show("Error algo salio mal" + ex);
             }
 
             con.Close();
@@ -125,17 +117,26 @@ namespace Portafolio
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            con.Open();
-            OracleCommand comando = new OracleCommand("SP_ACTUALIZAR_USUARIO", con);
-            comando.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("P_ID_USUARIO", OracleType.VarChar).Value = txtID.Text;
-            comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
-            comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
-            comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
-            comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
-            comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedText);
-            comando.ExecuteNonQuery();
-            MessageBox.Show("Cliente Actualizado");
+
+            try
+            {
+                con.Open();
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = Convert.ToInt32(txtID_Usuario.Text);
+                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
+                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
+                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
+                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
+                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedValue);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Usuario Actualizado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error algo salio mal" + ex);
+            }
+
             con.Close();
         }   
     }

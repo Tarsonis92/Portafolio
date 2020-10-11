@@ -44,7 +44,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtID_Usuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +139,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(315, 123);
+            this.btnAgregar.Location = new System.Drawing.Point(304, 109);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 16;
@@ -149,7 +149,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(396, 123);
+            this.btnActualizar.Location = new System.Drawing.Point(466, 110);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 17;
@@ -159,7 +159,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(477, 123);
+            this.btnEliminar.Location = new System.Drawing.Point(385, 110);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 18;
@@ -169,7 +169,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(234, 123);
+            this.btnCargar.Location = new System.Drawing.Point(547, 112);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 19;
@@ -180,25 +180,25 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(312, 96);
+            this.label6.Location = new System.Drawing.Point(30, 119);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 13);
+            this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 20;
-            this.label6.Text = "ID:";
+            this.label6.Text = "ID Usuario:";
             // 
-            // txtID
+            // txtID_Usuario
             // 
-            this.txtID.Location = new System.Drawing.Point(348, 93);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(199, 20);
-            this.txtID.TabIndex = 21;
+            this.txtID_Usuario.Location = new System.Drawing.Point(96, 112);
+            this.txtID_Usuario.Name = "txtID_Usuario";
+            this.txtID_Usuario.Size = new System.Drawing.Size(199, 20);
+            this.txtID_Usuario.TabIndex = 21;
             // 
             // Editar_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtID_Usuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnEliminar);
@@ -242,6 +242,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtID_Usuario;
     }
 }
