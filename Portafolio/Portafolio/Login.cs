@@ -63,7 +63,7 @@ namespace Portafolio
             }
             else 
             {
-                Administracion_Cliente cliente = new Administracion_Cliente();
+                Administracion_Usuario cliente = new Administracion_Usuario();
                 cliente.Show();
 
             }

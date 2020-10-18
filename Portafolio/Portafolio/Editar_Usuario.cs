@@ -17,8 +17,8 @@ namespace Portafolio
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
         Metodos_Tabla metodos = new Metodos_Tabla();
-        DAOUsuario usuario1 = new DAOUsuario();
-        Usuario Usuario = new Usuario();
+        DAOUsuario usuario = new DAOUsuario();
+       
         public Editar_Usuario()
         {
             InitializeComponent();
@@ -73,71 +73,31 @@ namespace Portafolio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = Convert.ToInt32(txtID_Usuario.Text);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Usuario Eliminado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error algo salio mal" + ex);
-            }
-            con.Close();
-            
+            usuario.Eliminar_Usuario(Convert.ToInt32(txtID_Usuario.Text));
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                con.Open();
-                OracleCommand comando = new OracleCommand("INSERTAR_USUARIO", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedValue);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Usuario Agregado");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error algo salio mal" + ex);
-            }
-
-            con.Close();
+          usuario.Agregar_Usuario(txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            usuario.Actualizar_Usuario(Convert.ToInt32(txtID_Usuario.Text), txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
+        }
 
-            try
+        private void dgvTabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvTabla.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = Convert.ToInt32(txtID_Usuario.Text);
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = txtNombre.Text;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = txtApellido.Text;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = txtContrasena.Text;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = txtCorreo.Text;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = Convert.ToInt32(cbxID_Tipo.SelectedValue);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Usuario Actualizado");
+                dgvTabla.CurrentRow.Selected = true;
+                txtID_Usuario.Text = dgvTabla.Rows[e.RowIndex].Cells["ID_USUARIO"].FormattedValue.ToString();
+                txtNombre.Text = dgvTabla.Rows[e.RowIndex].Cells["NOMBRE"].FormattedValue.ToString();
+                txtApellido.Text = dgvTabla.Rows[e.RowIndex].Cells["APELLIDO"].FormattedValue.ToString();
+                txtContrasena.Text = dgvTabla.Rows[e.RowIndex].Cells["CONTRASENA"].FormattedValue.ToString();
+                txtCorreo.Text = dgvTabla.Rows[e.RowIndex].Cells["CORREO"].FormattedValue.ToString();
+                cbxID_Tipo.SelectedValue = dgvTabla.Rows[e.RowIndex].Cells["ID_TIPO"].FormattedValue.ToString();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error algo salio mal" + ex);
-            }
-
-            con.Close();
-        }   
+        }
     }
 }

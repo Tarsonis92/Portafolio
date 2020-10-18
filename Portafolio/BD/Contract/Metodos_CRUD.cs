@@ -8,9 +8,13 @@ namespace BD.Contract
 {
     interface Metodos_CRUD<T>
     {
-        string Insertar(T dto);
-        string Actualizar(T dto);
-        string Eliminar(string dto);
+       
         List<T> Listar();
+
+        void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo);
+        void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo);
+        void Eliminar_Usuario(int id_usuario);
+
+
     }
 }

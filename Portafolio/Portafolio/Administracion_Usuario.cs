@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administracion_Cliente : Form
+    public partial class Administracion_Usuario : Form
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-        public Administracion_Cliente()
+        public Administracion_Usuario()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Portafolio
 {
-    partial class Administracion_Cliente
+    partial class Administracion_Usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,6 @@
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.Size = new System.Drawing.Size(644, 277);
             this.dgvTabla.TabIndex = 4;
-           
             // 
             // btnEditar
             // 
@@ -103,7 +102,7 @@
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // Administracion_Cliente
+            // Administracion_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,8 +114,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Administracion_Cliente";
-            this.Text = "Administracion_Cliente";
+            this.Name = "Administracion_Usuario";
+            this.Text = "Administracion_Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
             this.ResumeLayout(false);
 

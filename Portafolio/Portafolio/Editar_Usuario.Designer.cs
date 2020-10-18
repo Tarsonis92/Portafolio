@@ -55,6 +55,7 @@
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.Size = new System.Drawing.Size(644, 277);
             this.dgvTabla.TabIndex = 5;
+            this.dgvTabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTabla_CellClick);
             // 
             // label1
             // 
@@ -188,6 +189,7 @@
             // 
             // txtID_Usuario
             // 
+            this.txtID_Usuario.Enabled = false;
             this.txtID_Usuario.Location = new System.Drawing.Point(96, 112);
             this.txtID_Usuario.Name = "txtID_Usuario";
             this.txtID_Usuario.Size = new System.Drawing.Size(199, 20);

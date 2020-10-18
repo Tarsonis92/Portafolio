@@ -7,121 +7,111 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace BD
 {
     public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
     {
         Usuario dto = new Usuario();
+        OracleCommand comando = new OracleCommand();
+        OracleDataAdapter adaptador = new OracleDataAdapter();
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-        public string Actualizar(Usuario dto)
+       
+
+        public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
         {
-            string result = string.Empty;
             try
             {
 
-                using (OracleConnection con = new OracleConnection())
+                DialogResult result = MessageBox.Show("¿Desea Actualizar al Usuario?", "Actualizar", MessageBoxButtons.YesNo);
+
+                con.Open();
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = apellido;
+                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
+                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
+                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
+
+
+                if (result == DialogResult.Yes)
                 {
-                    con.Open();
-                    using (OracleCommand comand = new OracleCommand("SP_ACTUALIZAR_USUARIO", con))
-                    {
-
-                        comand.CommandType = System.Data.CommandType.StoredProcedure;
-                        comand.Parameters.Add(new OracleParameter("P_ID_USUARIO", OracleType.Int32)).Value = Convert.ToInt32(dto.Id_usuario);
-                        comand.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = dto.Nombre;
-                        comand.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = dto.Apellido;
-                        comand.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = dto.Contrasena;
-                        comand.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = dto.Correo;
-                        comand.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = dto.Id_tipo;
-                        comand.Parameters.Add(new OracleParameter("P_RESULT", OracleType.VarChar)).Direction = System.Data.ParameterDirection.Output;
-                        comand.ExecuteNonQuery();
-                        result = Convert.ToString(comand.Parameters["P_RESULT"].Value);
-
-                    }
-                    con.Close();
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Usuario Actualizado");
                 }
+                else if (result == DialogResult.No)
+                {
 
-
+                }
             }
             catch (Exception)
             {
-
-                throw;
-
+                MessageBox.Show("Error!!!, Algo salio mal");
             }
 
-            return result;
+            con.Close();
         }
 
-        public string Eliminar(string dto)
+        public void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo)
         {
-
-            string result = string.Empty;
             try
             {
+                con.Open();
+                OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
+                command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = apellido;
+                command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = contrasena;
+                command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = correo;
+                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
+                command.ExecuteNonQuery();
+                MessageBox.Show("Usuario Agregado");
+            }
 
-                using (OracleConnection con = new OracleConnection())
+            catch (Exception)
+            {
+                MessageBox.Show("Error!!!, Algo salio mal");
+            }
+            con.Close();
+        }
+
+       
+
+        public void Eliminar_Usuario(int id_usuario)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("¿Desea Eliminar al Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+
+                con.Open();
+                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+
+                if (result == DialogResult.Yes)
                 {
-                    con.Open();
-                    using (OracleCommand comand = new OracleCommand("SP_ELIMINAR_USUARIO", con))
-                    {
-
-                        comand.CommandType = System.Data.CommandType.StoredProcedure;
-                        comand.Parameters.Add(new OracleParameter("P_ID_USUARIO", OracleType.VarChar)).Value = dto;
-                        comand.Parameters.Add(new OracleParameter("P_RESULT", OracleType.VarChar)).Direction = System.Data.ParameterDirection.Output;
-                        comand.ExecuteNonQuery();
-                        result = Convert.ToString(comand.Parameters["P_RESULT"].Value);
-
-                    }
-                    con.Close();
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Usuario Eliminado");
                 }
+                else if (result == DialogResult.No)
+                {
 
-
+                }
             }
             catch (Exception)
             {
-
-                throw;
-
+                MessageBox.Show("Error!!!, Algo salio mal");
             }
 
-            return result;
 
+            con.Close();
         }
 
-        public string Insertar(Usuario dto)
-        {
-            string result = string.Empty;
-            try {
-
-                using (OracleConnection con = new OracleConnection()){
-
-                    con.Open();
-                    using (OracleCommand command = new OracleCommand("SP_INSERTAR_CLIENTE", con)) 
-                    {
-                        command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.Parameters.Add(new OracleParameter("P_ID_USUARIO", OracleType.VarChar)).Value = dto.Id_usuario;
-                        command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = dto.Nombre;
-                        command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = dto.Apellido;
-                        command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = dto.Contrasena;
-                        command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = dto.Correo;
-                        command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = Convert.ToInt32(dto.Id_tipo);
-                        command.Parameters.Add(new OracleParameter("P_RESULT",OracleType.VarChar)).Direction=System.Data.ParameterDirection.Output;
-
-                        result = Convert.ToString(command.Parameters["P_RESULT"].Value);
-
-                    }
-                    con.Close();
-                }
-            
-            } catch (Exception) {
-
-                throw;
-            
-            }
-
-            return result;
-        }
+       
 
         public List<Usuario> Listar()
         {
