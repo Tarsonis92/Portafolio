@@ -26,7 +26,6 @@ C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\bin\Debu
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\bin\Debug\Clases.pdb
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.csprojAssemblyReference.cache
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Administracion_Bodega.resources
-C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Administracion_Cliente.resources
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Administracion_Finanzas.resources
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Editar_Usuario.resources
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Login.resources
@@ -36,3 +35,4 @@ C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debu
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.csproj.CopyComplete
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.exe
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.pdb
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Administracion_Usuario.resources
