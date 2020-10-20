@@ -74,16 +74,19 @@ namespace Portafolio
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             usuario.Eliminar_Usuario(Convert.ToInt32(txtID_Usuario.Text));
+            limpiarPantalla();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
           usuario.Agregar_Usuario(txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
+            limpiarPantalla();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             usuario.Actualizar_Usuario(Convert.ToInt32(txtID_Usuario.Text), txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
+            limpiarPantalla();
         }
 
         private void dgvTabla_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -99,5 +102,22 @@ namespace Portafolio
                 cbxID_Tipo.SelectedValue = dgvTabla.Rows[e.RowIndex].Cells["ID_TIPO"].FormattedValue.ToString();
             }
         }
+
+        public void limpiarPantalla()
+        {
+            txtID_Usuario.Text = null;
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtContrasena.Text = "";
+            txtCorreo.Text = "";
+            cbxID_Tipo.SelectedValue = 1;
+
+        }
+
+
+
+
+
+
     }
 }
