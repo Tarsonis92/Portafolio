@@ -66,6 +66,7 @@ namespace Portafolio
 
         private void Editar_Usuario_Load(object sender, EventArgs e)
         {
+            mostrarTabla();
             cbxID_Tipo.DataSource = Datos();
             cbxID_Tipo.DisplayMember = "NOMBRE";
             cbxID_Tipo.ValueMember = "ID_TIPO";
@@ -75,18 +76,21 @@ namespace Portafolio
         {
             usuario.Eliminar_Usuario(Convert.ToInt32(txtID_Usuario.Text));
             limpiarPantalla();
+            mostrarTabla();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
           usuario.Agregar_Usuario(txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
             limpiarPantalla();
+            mostrarTabla();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             usuario.Actualizar_Usuario(Convert.ToInt32(txtID_Usuario.Text), txtNombre.Text, txtApellido.Text, txtContrasena.Text, txtCorreo.Text, Convert.ToInt32(cbxID_Tipo.SelectedValue));
             limpiarPantalla();
+            mostrarTabla();
         }
 
         private void dgvTabla_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,6 +109,7 @@ namespace Portafolio
 
         public void limpiarPantalla()
         {
+            
             txtID_Usuario.Text = null;
             txtNombre.Text = "";
             txtApellido.Text = "";
@@ -113,11 +118,6 @@ namespace Portafolio
             cbxID_Tipo.SelectedValue = 1;
 
         }
-
-
-
-
-
 
     }
 }
