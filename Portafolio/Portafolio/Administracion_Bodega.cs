@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administracion_Bodega : Form
+    public partial class Administracion_Bodega : MetroFramework.Forms.MetroForm
     {
         public Administracion_Bodega()
         {

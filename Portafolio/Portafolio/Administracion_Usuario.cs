@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administracion_Usuario : Form
+    public partial class Administracion_Usuario : MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 

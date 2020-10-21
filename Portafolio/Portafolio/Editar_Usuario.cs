@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Editar_Usuario : Form
+    public partial class Editar_Usuario : MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
         Metodos_Tabla metodos = new Metodos_Tabla();

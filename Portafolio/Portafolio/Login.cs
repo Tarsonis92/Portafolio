@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Login : Form
+    public partial class Login : MetroFramework.Forms.MetroForm
     {
         Usuario usa = new Usuario();
         Conexion ora = new Conexion();

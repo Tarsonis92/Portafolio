@@ -36,3 +36,5 @@ C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debu
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.exe
 C:\Users\carlo\Source\Repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.pdb
 C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Portafolio\obj\Debug\Portafolio.Administracion_Usuario.resources
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Portafolio\bin\Debug\MetroFramework.dll
+C:\Users\carlo\source\repos\Tarsonis92\Portafolio\Portafolio\Portafolio\bin\Debug\MetroFramework.Fonts.dll
