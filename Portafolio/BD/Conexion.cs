@@ -10,7 +10,7 @@ namespace BD
     public class Conexion
     {
 
-        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
 
         public Conexion()
         {
