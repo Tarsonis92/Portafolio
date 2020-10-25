@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Bodega
+    class Registro_Bodega
     {
         private int id_bodega;
-        private int stock;
+        private DateTime fecha_ingreso;
 
-        public Bodega(int id_bodega, int stock)
+        public Registro_Bodega(int id_bodega, DateTime fecha_ingreso)
         {
             this.id_bodega = id_bodega;
-            this.stock = stock;
+            this.fecha_ingreso = fecha_ingreso;
         }
 
         public int Id_bodega { get => id_bodega; set => id_bodega = value; }
-        public int Stock { get => stock; set => stock = value; }
+        public DateTime Fecha_ingreso { get => fecha_ingreso; set => fecha_ingreso = value; }
     }
 }
