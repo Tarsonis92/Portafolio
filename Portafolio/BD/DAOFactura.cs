@@ -9,39 +9,40 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+
+
+
 namespace BD
 {
-    public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
+
+    public class DAOFactura
     {
-        Usuario dto = new Usuario();
+        Factura dto = new Factura();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-       
 
-        public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
+        public void Actualizar_Factura(int id_factura, DateTime fecha_emision, Char estado)
         {
             try
             {
 
-                DialogResult result = MessageBox.Show("¿Desea Actualizar al Usuario?", "Actualizar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Actualizar La Factura ?", "Actualizar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = apellido;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_FACTURA", con);
+                // comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_FACTURA", OracleType.Int32).Value = id_factura;
+                comando.Parameters.Add("P_FECHA_EMISION", OracleType.Date).Value = fecha_emision;
+                comando.Parameters.Add("P_ESTADO", OracleType.Char).Value = estado;
+
 
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Actualizado");
+                    MessageBox.Show("Factura Actualizada");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -56,20 +57,18 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo)
+        public void Agregar_Factura(int id_factura, DateTime fecha_emision, Char estado)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
-                command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = apellido;
-                command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = contrasena;
-                command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = correo;
-                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
+                comando.Parameters.Add("P_ID_FACTURA", OracleType.Int32).Value = id_factura;
+                comando.Parameters.Add("P_FECHA_EMISION", OracleType.Date).Value = fecha_emision;
+                comando.Parameters.Add("P_ESTADO", OracleType.Char).Value = estado;
                 command.ExecuteNonQuery();
-                MessageBox.Show("Usuario Agregado");
+                MessageBox.Show("Factura Agregada");
             }
 
             catch (Exception)
@@ -79,18 +78,17 @@ namespace BD
             con.Close();
         }
 
-       
 
-        public void Eliminar_Usuario(int id_usuario)
+        public void Eliminar_Usuario(int id_factura)
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea Eliminar al Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Eliminar La Factura ?", "Eliminar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ELIMINAR_FACTURA", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_ID_FACTURA", OracleType.Int32).Value = id_factura;
 
                 if (result == DialogResult.Yes)
                 {
@@ -111,12 +109,10 @@ namespace BD
             con.Close();
         }
 
-       
-
-        public List<Usuario> Listar()
+        public List<Factura> Listar()
         {
-            List<Usuario> usa = new List<Usuario>();
-            Usuario dto = null;
+            List<Factura> usa = new List<Factura>();
+            Factura dto = null;
             try
             {
                 using (OracleConnection con = new OracleConnection())
@@ -134,13 +130,10 @@ namespace BD
                             while (dr.Read())
                             {
 
-                                dto = new Usuario();
-                                dto.Id_usuario = dr["ID_USUARIO"].ToString();
-                                dto.Nombre = dr["NOMBRE"].ToString();
-                                dto.Apellido = dr["APELLIDO"].ToString();
-                                dto.Contrasena = dr["CONTRASENA"].ToString();
-                                dto.Correo = dr["CORREO"].ToString();
-                                dto.Id_tipo = dr["ID_TIPO"].ToString();
+                                dto = new Factura();
+                                dto.Id_factura = dr["ID_FACTURA"].ToString();
+                                dto.Fecha_Emision = dr["FECHA_EMISION"].ToString();
+                                dto.Estado = dr["ESTADO"].ToString();
                                 usa.Add(dto);
 
                             }
@@ -157,4 +150,6 @@ namespace BD
             return usa;
         }
     }
+  
+
 }

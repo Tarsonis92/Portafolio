@@ -11,37 +11,35 @@ using System.Windows.Forms;
 
 namespace BD
 {
-    public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
+    public class DAOReservacion 
     {
-        Usuario dto = new Usuario();
+        Reservacion dto = new Reservacion();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-       
 
-        public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
+
+        public void Actualizar_Reservacion(int id_reservacion, DateTime fecha_hora, int id_usuario)
         {
             try
             {
 
-                DialogResult result = MessageBox.Show("¿Desea Actualizar al Usuario?", "Actualizar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Actualizar la Reservación?", "Actualizar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_RESERVACION", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value =id_reservacion ;
+                comando.Parameters.Add("P_FECHA_HORA", OracleType.VarChar).Value = fecha_hora;
                 comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = apellido;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
+                
 
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Actualizado");
+                    MessageBox.Show("Reservación Actualizada");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -55,21 +53,18 @@ namespace BD
 
             con.Close();
         }
-
-        public void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo)
+        public void Agregar_Reservacion(int id_reservacion, DateTime fecha_hora, int id_usuario)
         {
             try
             {
                 con.Open();
-                OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
-                command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = apellido;
-                command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = contrasena;
-                command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = correo;
-                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_RESERVACION", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value = id_reservacion;
+                comando.Parameters.Add("P_FECHA_HORA", OracleType.VarChar).Value = fecha_hora;
+                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
                 command.ExecuteNonQuery();
-                MessageBox.Show("Usuario Agregado");
+                MessageBox.Show("Reservación Agregada");
             }
 
             catch (Exception)
@@ -79,23 +74,21 @@ namespace BD
             con.Close();
         }
 
-       
-
-        public void Eliminar_Usuario(int id_usuario)
+        public void Eliminar_Reservacion(int id_reservacion)
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea Eliminar al Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Eliminar La Reservación?", "Eliminar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ELIMINAR_RESERVACION", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_ID_reservacion", OracleType.Int32).Value = id_reservacion;
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Eliminado");
+                    MessageBox.Show("Reservación Eliminada");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -110,20 +103,17 @@ namespace BD
 
             con.Close();
         }
-
-       
-
-        public List<Usuario> Listar()
+        public List<Reservacion> Listar()
         {
-            List<Usuario> usa = new List<Usuario>();
-            Usuario dto = null;
+            List<Reservacion> usa = new List<Reservacion>();
+            Reservacion dto = null;
             try
             {
                 using (OracleConnection con = new OracleConnection())
                 {
 
                     con.Open();
-                    using (OracleCommand comando = new OracleCommand("SP_SELECT_USUARIO", con))
+                    using (OracleCommand comando = new OracleCommand("SP_SELECT_RESERVACION", con))
                     {
                         comando.CommandType = System.Data.CommandType.StoredProcedure;
                         comando.Parameters.Add(new OracleParameter("P_CURSOR", OracleType.Cursor)).Direction = System.Data.ParameterDirection.Output;
@@ -135,12 +125,9 @@ namespace BD
                             {
 
                                 dto = new Usuario();
+                                dto.Id_reservacion = dr["ID_RESERVACION"].ToString();
+                                dto.Fecha_hora = dr["FECHA_HORA"].ToString();
                                 dto.Id_usuario = dr["ID_USUARIO"].ToString();
-                                dto.Nombre = dr["NOMBRE"].ToString();
-                                dto.Apellido = dr["APELLIDO"].ToString();
-                                dto.Contrasena = dr["CONTRASENA"].ToString();
-                                dto.Correo = dr["CORREO"].ToString();
-                                dto.Id_tipo = dr["ID_TIPO"].ToString();
                                 usa.Add(dto);
 
                             }

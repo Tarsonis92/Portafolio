@@ -11,37 +11,34 @@ using System.Windows.Forms;
 
 namespace BD
 {
-    public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
+    public class DAOUCateProd 
     {
-        Usuario dto = new Usuario();
+        Usuario dto = new CateProd();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-       
 
-        public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
+
+        public void Actualizar_Cate_Prod(int id_categoria,String  nombre, String descripcion)
         {
             try
             {
-
-                DialogResult result = MessageBox.Show("¿Desea Actualizar al Usuario?", "Actualizar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Actualizar La Categoría Del Producto?", "Actualizar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_CATE_PROD", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_ID_CATEGORIA", OracleType.Int32).Value = id_categoria;
                 comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = apellido;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
-                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
+                comando.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
+               
 
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Actualizado");
+                    MessageBox.Show("Categoría Actualizada");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -56,20 +53,18 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo)
+        public void Agregar_CateProd(int id_categoria, String nombre, String descripcion)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
-                command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = apellido;
-                command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = contrasena;
-                command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = correo;
-                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
+                comando.Parameters.Add("P_ID_CATEGORIA", OracleType.Int32).Value = id_categoria;
+                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+                comando.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
                 command.ExecuteNonQuery();
-                MessageBox.Show("Usuario Agregado");
+                MessageBox.Show("Categoría Producto Agregada");
             }
 
             catch (Exception)
@@ -79,23 +74,22 @@ namespace BD
             con.Close();
         }
 
-       
 
-        public void Eliminar_Usuario(int id_usuario)
+        public void Eliminar_CateProd(int id_categoria)
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea Eliminar al Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Eliminar La Categoría De Producto?", "Eliminar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ELIMINAR_CATEGORIA", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_ID_CATEGORIA", OracleType.Int32).Value = id_categoria;
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Eliminado");
+                    MessageBox.Show("Categoría Eliminada");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -111,19 +105,18 @@ namespace BD
             con.Close();
         }
 
-       
 
-        public List<Usuario> Listar()
+        public List<CateProd> Listar()
         {
-            List<Usuario> usa = new List<Usuario>();
-            Usuario dto = null;
+            List<CateProd> usa = new List<Cate_Prod>();
+            Cate_Prod dto = null;
             try
             {
                 using (OracleConnection con = new OracleConnection())
                 {
 
                     con.Open();
-                    using (OracleCommand comando = new OracleCommand("SP_SELECT_USUARIO", con))
+                    using (OracleCommand comando = new OracleCommand("SP_SELECT_CATE_PROD", con))
                     {
                         comando.CommandType = System.Data.CommandType.StoredProcedure;
                         comando.Parameters.Add(new OracleParameter("P_CURSOR", OracleType.Cursor)).Direction = System.Data.ParameterDirection.Output;
@@ -134,13 +127,10 @@ namespace BD
                             while (dr.Read())
                             {
 
-                                dto = new Usuario();
-                                dto.Id_usuario = dr["ID_USUARIO"].ToString();
+                                dto = new CateProd();
+                                dto.Id_categoria = dr["ID_CATEGORIA"].ToString();
                                 dto.Nombre = dr["NOMBRE"].ToString();
-                                dto.Apellido = dr["APELLIDO"].ToString();
-                                dto.Contrasena = dr["CONTRASENA"].ToString();
-                                dto.Correo = dr["CORREO"].ToString();
-                                dto.Id_tipo = dr["ID_TIPO"].ToString();
+                                dto.Detalle = dr["DETALLE"].ToString();
                                 usa.Add(dto);
 
                             }
