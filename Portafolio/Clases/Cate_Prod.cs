@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Cat_Producto
+    class Cate_Prod
     {
         private int id_categoria;
         private string nombre;
         private string descripcion;
 
-        public Cat_Producto(int id_categoria, string nombre, string descripcion)
+        public Cate_Prod(int id_categoria, string nombre, string descripcion)
         {
             this.id_categoria = id_categoria;
             this.nombre = nombre;

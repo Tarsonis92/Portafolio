@@ -135,7 +135,7 @@ namespace BD
                             {
 
                                 dto = new Usuario();
-                                dto.Id_usuario = dr["ID_USUARIO"].ToString();
+                                dto.Id_usuario = Convert.ToInt32(dr["ID_USUARIO"].ToString());
                                 dto.Nombre = dr["NOMBRE"].ToString();
                                 dto.Apellido = dr["APELLIDO"].ToString();
                                 dto.Contrasena = dr["CONTRASENA"].ToString();

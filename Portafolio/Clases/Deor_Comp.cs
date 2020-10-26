@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Deta_Ordencomp
+    class Deor_Comp
     {
 
         private int id_detalle;
         private int cantidad;
         private int total_compra;
 
-        public Deta_Ordencomp(int id_detalle, int cantidad, int total_compra)
+        public Deor_Comp(int id_detalle, int cantidad, int total_compra)
         {
             this.id_detalle = id_detalle;
             this.cantidad = cantidad;

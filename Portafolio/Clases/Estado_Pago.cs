@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Est_Pago
+    class Estado_Pago
     {
         private int id_estado;
         private string nombre;
 
-        public Est_Pago(int id_estado, string nombre)
+        public Estado_Pago(int id_estado, string nombre)
         {
             this.id_estado = id_estado;
             this.nombre = nombre;
