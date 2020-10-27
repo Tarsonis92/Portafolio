@@ -34,5 +34,10 @@ namespace Portafolio
             Clientes clientes = new Clientes();
             clientes.Show();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
