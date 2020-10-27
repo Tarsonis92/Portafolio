@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Editar_Usuario : MetroFramework.Forms.MetroForm
+    public partial class Administrar_Usuario : MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
         Metodos_Tabla metodos = new Metodos_Tabla();
         DAOUsuario usuario = new DAOUsuario();
        
-        public Editar_Usuario()
+        public Administrar_Usuario()
         {
             InitializeComponent();
         }
@@ -100,7 +100,7 @@ namespace Portafolio
                 txtID_Usuario.Text = dgvTabla.Rows[e.RowIndex].Cells["ID_USUARIO"].FormattedValue.ToString();
                 txtNombre.Text = dgvTabla.Rows[e.RowIndex].Cells["NOMBRE"].FormattedValue.ToString();
                 txtApellido.Text = dgvTabla.Rows[e.RowIndex].Cells["APELLIDO"].FormattedValue.ToString();
-                txtContrasena.Text = dgvTabla.Rows[e.RowIndex].Cells["CONTRASENA"].FormattedValue.ToString();
+                txtContrasena.Text = dgvTabla.Rows[e.RowIndex].Cells["CONTRASEÑA"].FormattedValue.ToString();
                 txtCorreo.Text = dgvTabla.Rows[e.RowIndex].Cells["CORREO"].FormattedValue.ToString();
                 cbxID_Tipo.SelectedValue = dgvTabla.Rows[e.RowIndex].Cells["ID_TIPO"].FormattedValue.ToString();
             }
@@ -118,5 +118,10 @@ namespace Portafolio
 
         }
 
+        private void btnOpcion_Click(object sender, EventArgs e)
+        {
+            Opciones_Admin admin = new Opciones_Admin();
+            admin.Show();
+        }
     }
 }

@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administracion_Usuario : MetroFramework.Forms.MetroForm
+    public partial class Administracion_Producto : MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
 
-        public Administracion_Usuario()
+        public Administracion_Producto()
         {
             InitializeComponent();
         }
         Metodos_Tabla metodos = new Metodos_Tabla();
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Editar_Usuario editar = new Editar_Usuario();
+            Administrar_Usuario editar = new Administrar_Usuario();
             editar.Show();
         }
 

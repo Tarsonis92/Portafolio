@@ -28,54 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.btnAdmin = new MetroFramework.Controls.MetroButton();
+            this.btnFinanzas = new MetroFramework.Controls.MetroButton();
+            this.btnBodega = new MetroFramework.Controls.MetroButton();
+            this.btnCocina = new MetroFramework.Controls.MetroButton();
+            this.btnClientes = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // metroButton1
+            // btnAdmin
             // 
-            this.metroButton1.Location = new System.Drawing.Point(174, 84);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(225, 123);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "Administrador";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnAdmin.Location = new System.Drawing.Point(129, 48);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(251, 156);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.Text = "Administrador";
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // metroButton2
+            // btnFinanzas
             // 
-            this.metroButton2.Location = new System.Drawing.Point(405, 84);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(225, 123);
-            this.metroButton2.TabIndex = 1;
-            this.metroButton2.Text = "Cocina";
+            this.btnFinanzas.Location = new System.Drawing.Point(386, 48);
+            this.btnFinanzas.Name = "btnFinanzas";
+            this.btnFinanzas.Size = new System.Drawing.Size(251, 156);
+            this.btnFinanzas.TabIndex = 1;
+            this.btnFinanzas.Text = "Finanzas";
             // 
-            // metroButton3
+            // btnBodega
             // 
-            this.metroButton3.Location = new System.Drawing.Point(174, 213);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(225, 123);
-            this.metroButton3.TabIndex = 2;
-            this.metroButton3.Text = "Bodega";
+            this.btnBodega.Location = new System.Drawing.Point(129, 210);
+            this.btnBodega.Name = "btnBodega";
+            this.btnBodega.Size = new System.Drawing.Size(251, 86);
+            this.btnBodega.TabIndex = 2;
+            this.btnBodega.Text = "Bodega";
             // 
-            // metroButton4
+            // btnCocina
             // 
-            this.metroButton4.Location = new System.Drawing.Point(405, 213);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(225, 123);
-            this.metroButton4.TabIndex = 3;
-            this.metroButton4.Text = "Clientes";
+            this.btnCocina.Location = new System.Drawing.Point(386, 210);
+            this.btnCocina.Name = "btnCocina";
+            this.btnCocina.Size = new System.Drawing.Size(251, 86);
+            this.btnCocina.TabIndex = 3;
+            this.btnCocina.Text = "Cocina";
+            this.btnCocina.Click += new System.EventHandler(this.btnCocina_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Location = new System.Drawing.Point(129, 303);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(508, 81);
+            this.btnClientes.TabIndex = 4;
+            this.btnClientes.Text = "Recepcion";
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.metroButton4);
-            this.Controls.Add(this.metroButton3);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnClientes);
+            this.Controls.Add(this.btnCocina);
+            this.Controls.Add(this.btnBodega);
+            this.Controls.Add(this.btnFinanzas);
+            this.Controls.Add(this.btnAdmin);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.ResumeLayout(false);
@@ -84,9 +96,10 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroButton metroButton4;
+        private MetroFramework.Controls.MetroButton btnAdmin;
+        private MetroFramework.Controls.MetroButton btnFinanzas;
+        private MetroFramework.Controls.MetroButton btnBodega;
+        private MetroFramework.Controls.MetroButton btnCocina;
+        private MetroFramework.Controls.MetroButton btnClientes;
     }
 }

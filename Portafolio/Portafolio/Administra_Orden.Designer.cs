@@ -1,6 +1,6 @@
 ﻿namespace Portafolio
 {
-    partial class Administracion_Bodega
+    partial class Administra_Orden
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,8 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.txtId_Bodega = new MetroFramework.Controls.MetroTextBox();
-            this.txtStock = new MetroFramework.Controls.MetroTextBox();
-            this.txtId_Registro = new MetroFramework.Controls.MetroTextBox();
+            this.txtId_Orden = new MetroFramework.Controls.MetroTextBox();
+            this.txtId_Mesa = new MetroFramework.Controls.MetroTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
@@ -44,84 +42,68 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(44, 71);
+            this.metroLabel1.Location = new System.Drawing.Point(156, 88);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Id_Bodega:";
+            this.metroLabel1.Text = "Id Orden:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(306, 71);
+            this.metroLabel2.Location = new System.Drawing.Point(410, 92);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(58, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Stock:";
+            this.metroLabel2.Text = "Id Mesa:";
             // 
-            // metroLabel3
+            // txtId_Orden
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(528, 75);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(77, 19);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Id_Registro:";
+            this.txtId_Orden.Location = new System.Drawing.Point(227, 88);
+            this.txtId_Orden.Name = "txtId_Orden";
+            this.txtId_Orden.Size = new System.Drawing.Size(151, 23);
+            this.txtId_Orden.TabIndex = 2;
             // 
-            // txtId_Bodega
+            // txtId_Mesa
             // 
-            this.txtId_Bodega.Location = new System.Drawing.Point(125, 71);
-            this.txtId_Bodega.Name = "txtId_Bodega";
-            this.txtId_Bodega.Size = new System.Drawing.Size(159, 23);
-            this.txtId_Bodega.TabIndex = 3;
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(355, 71);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(159, 23);
-            this.txtStock.TabIndex = 4;
-            // 
-            // txtId_Registro
-            // 
-            this.txtId_Registro.Location = new System.Drawing.Point(611, 75);
-            this.txtId_Registro.Name = "txtId_Registro";
-            this.txtId_Registro.Size = new System.Drawing.Size(159, 23);
-            this.txtId_Registro.TabIndex = 5;
+            this.txtId_Mesa.Location = new System.Drawing.Point(474, 92);
+            this.txtId_Mesa.Name = "txtId_Mesa";
+            this.txtId_Mesa.Size = new System.Drawing.Size(156, 23);
+            this.txtId_Mesa.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(154, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(215, 189);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(489, 242);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.Size = new System.Drawing.Size(348, 177);
+            this.dataGridView1.TabIndex = 4;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(230, 122);
+            this.btnAgregar.Location = new System.Drawing.Point(244, 144);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(331, 122);
+            this.btnActualizar.Location = new System.Drawing.Point(348, 144);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(439, 122);
+            this.btnEliminar.Location = new System.Drawing.Point(457, 144);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             // 
-            // Administracion_Bodega
+            // Administra_Orden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,14 +112,12 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtId_Registro);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.txtId_Bodega);
-            this.Controls.Add(this.metroLabel3);
+            this.Controls.Add(this.txtId_Mesa);
+            this.Controls.Add(this.txtId_Orden);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Administracion_Bodega";
-            this.Text = "Administracion_Bodega";
+            this.Name = "Administra_Orden";
+            this.Text = "Administra_Orden";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,10 +128,8 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txtId_Bodega;
-        private MetroFramework.Controls.MetroTextBox txtStock;
-        private MetroFramework.Controls.MetroTextBox txtId_Registro;
+        private MetroFramework.Controls.MetroTextBox txtId_Orden;
+        private MetroFramework.Controls.MetroTextBox txtId_Mesa;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;

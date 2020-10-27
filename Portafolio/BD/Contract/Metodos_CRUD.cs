@@ -15,6 +15,6 @@ namespace BD.Contract
         void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo);
         void Eliminar_Usuario(int id_usuario);
 
-
+        
     }
 }

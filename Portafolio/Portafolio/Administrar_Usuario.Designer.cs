@@ -1,6 +1,6 @@
 ﻿namespace Portafolio
 {
-    partial class Editar_Usuario
+    partial class Administrar_Usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -192,6 +192,7 @@
             this.btnOpcion.Size = new System.Drawing.Size(75, 23);
             this.btnOpcion.TabIndex = 22;
             this.btnOpcion.Text = "Opciones";
+            this.btnOpcion.Click += new System.EventHandler(this.btnOpcion_Click);
             // 
             // Editar_Usuario
             // 

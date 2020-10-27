@@ -17,10 +17,22 @@ namespace Portafolio
             InitializeComponent();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
-            Editar_Usuario usuario = new Editar_Usuario();
+            Administrar_Usuario usuario = new Administrar_Usuario();
             usuario.Show();
+        }
+
+        private void btnCocina_Click(object sender, EventArgs e)
+        {
+            Cocina cocina = new Cocina();
+            cocina.Show();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            clientes.Show();
         }
     }
 }
