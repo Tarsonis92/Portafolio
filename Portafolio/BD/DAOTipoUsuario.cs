@@ -8,20 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data;
 
 namespace BD
 {
-    public class DAOUsuario : Conexion, Metodos_CRUD<Usuario>
+    public class DAOTipoUsuario 
     {
-        Usuario dto = new Usuario();
+        TipoUsuario dto = new TipoUsuario();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
-        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-
-
-        public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
+        public void Actualizar_Tipo_Usuario(int id_tipo, string nombre)
         {
             try
             {
@@ -29,74 +26,68 @@ namespace BD
                 DialogResult result = MessageBox.Show("¿Desea Actualizar al Usuario?", "Actualizar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_USUARIO", con);
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_TIPO_USUARIO", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
                 comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_APELLIDO", OracleType.VarChar).Value = apellido;
-                comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
+                
+
+
+                if (result == DialogResult.Yes)
+                {
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Tipo Usuario Actualizado");
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!!!, Algo salio mal");
+            }
+
+            con.Close();
+        }
+        public void Agregar_Tipo_Usuario(int id_tipo, string nombre)
+        {
+            try
+            {
+                con.Open();
+                OracleCommand command = new OracleCommand("INSERTAR_Tipo_Usuario", con);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
+                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
+               
+                
+                command.ExecuteNonQuery();
+                MessageBox.Show("Tipo Usuario Agregado");
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Error!!!, Algo salio mal");
+            }
+            con.Close();
+        }
+
+
+        public void Eliminar_Tipo_Usuario(int id_tipo)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("¿Desea Eliminar El Tipo De Usuario?", "Eliminar", MessageBoxButtons.YesNo);
+
+                con.Open();
+                OracleCommand comando = new OracleCommand("ELIMINAR_TIPO_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
 
-
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Actualizado");
-                }
-                else if (result == DialogResult.No)
-                {
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!!!, Algo salio mal");
-            }
-
-            con.Close();
-        }
-
-        public void Agregar_Usuario(string nombre, string apellido, string contrasena, string correo, int id_tipo)
-        {
-            try
-            {
-                con.Open();
-                OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add(new OracleParameter("P_NOMBRE", OracleType.VarChar)).Value = nombre;
-                command.Parameters.Add(new OracleParameter("P_APELLIDO", OracleType.VarChar)).Value = apellido;
-                command.Parameters.Add(new OracleParameter("P_CONTRASENA", OracleType.VarChar)).Value = contrasena;
-                command.Parameters.Add(new OracleParameter("P_CORREO", OracleType.VarChar)).Value = correo;
-                command.Parameters.Add(new OracleParameter("P_ID_TIPO", OracleType.Int32)).Value = id_tipo;
-                command.ExecuteNonQuery();
-                MessageBox.Show("Usuario Agregado");
-            }
-
-            catch (Exception)
-            {
-                MessageBox.Show("Error!!!, Algo salio mal");
-            }
-            con.Close();
-        }
-
-
-
-        public void Eliminar_Usuario(int id_usuario)
-        {
-            try
-            {
-                DialogResult result = MessageBox.Show("¿Desea Eliminar al Usuario?", "Eliminar", MessageBoxButtons.YesNo);
-
-                con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_USUARIO", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
-
-                if (result == DialogResult.Yes)
-                {
-                    comando.ExecuteNonQuery();
-                    MessageBox.Show("Usuario Eliminado");
+                    MessageBox.Show("Tipo De Usuario Eliminado");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -112,19 +103,17 @@ namespace BD
             con.Close();
         }
 
-
-
-        public List<Usuario> Listar()
+        public List<TipoUsuario> Listar()
         {
-            List<Usuario> usa = new List<Usuario>();
-            Usuario dto = null;
+            List<TipoUsuario> usa = new List<TipoUsuario>();
+            TipoUsuario dto = null;
             try
             {
                 using (OracleConnection con = new OracleConnection())
                 {
 
                     con.Open();
-                    using (OracleCommand comando = new OracleCommand("SP_SELECT_USUARIO", con))
+                    using (OracleCommand comando = new OracleCommand("SP_SELECT_TIPO_USUARIO", con))
                     {
                         comando.CommandType = System.Data.CommandType.StoredProcedure;
                         comando.Parameters.Add(new OracleParameter("P_CURSOR", OracleType.Cursor)).Direction = System.Data.ParameterDirection.Output;
@@ -135,13 +124,10 @@ namespace BD
                             while (dr.Read())
                             {
 
-                                dto = new Usuario();
-                                dto.Id_usuario = Convert.ToInt32(dr["ID_USUARIO"].ToString());
+                                dto = new TipoUsuario();
+                                dto.Id_usuario = Convert.ToInt32(dr["ID_TIPO"].ToString());
                                 dto.Nombre = dr["NOMBRE"].ToString();
-                                dto.Apellido = dr["APELLIDO"].ToString();
-                                dto.Contrasena = dr["CONTRASEÑA"].ToString();
-                                dto.Correo = dr["CORREO"].ToString();
-                                dto.Id_tipo = dr["ID_TIPO"].ToString();
+                               
                                 usa.Add(dto);
 
                             }
@@ -157,8 +143,7 @@ namespace BD
             }
             return usa;
         }
-
-        
     }
-
 }
+
+
