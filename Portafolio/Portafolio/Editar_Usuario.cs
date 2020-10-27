@@ -15,7 +15,7 @@ namespace Portafolio
 {
     public partial class Editar_Usuario : MetroFramework.Forms.MetroForm
     {
-        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
         Metodos_Tabla metodos = new Metodos_Tabla();
         DAOUsuario usuario = new DAOUsuario();
        
@@ -62,7 +62,6 @@ namespace Portafolio
             return data;
 
         }
-
 
         private void Editar_Usuario_Load(object sender, EventArgs e)
         {

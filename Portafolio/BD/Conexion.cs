@@ -27,17 +27,17 @@ namespace BD
             con.Close();
         }
 
-        public bool conexion_validar(string id_usuario, string contrasena) {
+        public bool conexion_validar(string nombre, string contrasena) {
 
             bool flag = false;
 
             OracleCommand ora = new OracleCommand
                 ("SELECT * FROM USUARIO " +
                 "WHERE NOMBRE =: nombre " +
-                "AND CONTRASENA =: contrasena",con);
+                "AND CONTRASEÑA =: contraseña",con);
             
-            ora.Parameters.AddWithValue(":nombre", id_usuario);
-            ora.Parameters.AddWithValue(":contrasena",contrasena);
+            ora.Parameters.AddWithValue(":nombre", nombre);
+            ora.Parameters.AddWithValue(":contraseña",contrasena);
 
             OracleDataReader reader = ora.ExecuteReader();
 
@@ -46,7 +46,7 @@ namespace BD
             {
 
                 con.Close();
-                MessageBox.Show("Bienvenido "+id_usuario);
+                MessageBox.Show("Bienvenido "+nombre);
 
             }
             else {

@@ -14,7 +14,7 @@ namespace Portafolio
 {
     public partial class Administracion_Usuario : MetroFramework.Forms.MetroForm
     {
-        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
 
         public Administracion_Usuario()
         {

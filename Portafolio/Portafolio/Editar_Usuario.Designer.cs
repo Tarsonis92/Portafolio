@@ -44,6 +44,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtID_Usuario = new System.Windows.Forms.TextBox();
+            this.btnOpcion = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +140,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(388, 118);
+            this.btnAgregar.Location = new System.Drawing.Point(372, 120);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 16;
@@ -149,7 +150,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(550, 118);
+            this.btnActualizar.Location = new System.Drawing.Point(550, 120);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 17;
@@ -159,7 +160,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(469, 118);
+            this.btnEliminar.Location = new System.Drawing.Point(460, 120);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 18;
@@ -184,11 +185,20 @@
             this.txtID_Usuario.Size = new System.Drawing.Size(199, 20);
             this.txtID_Usuario.TabIndex = 21;
             // 
+            // btnOpcion
+            // 
+            this.btnOpcion.Location = new System.Drawing.Point(631, 120);
+            this.btnOpcion.Name = "btnOpcion";
+            this.btnOpcion.Size = new System.Drawing.Size(75, 23);
+            this.btnOpcion.TabIndex = 22;
+            this.btnOpcion.Text = "Opciones";
+            // 
             // Editar_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnOpcion);
             this.Controls.Add(this.txtID_Usuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminar);
@@ -232,5 +242,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtID_Usuario;
+        private MetroFramework.Controls.MetroButton btnOpcion;
     }
 }

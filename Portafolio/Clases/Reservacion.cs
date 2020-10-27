@@ -8,16 +8,17 @@ namespace Clases
 {
     class Reservacion
     {
-        private int id_mesa;
-        private int capacidad;
+        private int id_reserva;
+        private DateTime fecha_hora;
 
-        public Reservacion(int id_mesa, int capacidad)
+        public Reservacion(int id_reserva, DateTime fecha_hora)
         {
-            this.id_mesa = id_mesa;
-            this.capacidad = capacidad;
+            this.id_reserva = id_reserva;
+            this.fecha_hora = fecha_hora;
         }
 
-        public int Id_mesa { get => id_mesa; set => id_mesa = value; }
-        public int Capacidad { get => capacidad; set => capacidad = value; }
+        public int Id_reserva { get => id_reserva; set => id_reserva = value; }
+        public DateTime Fecha_Hora { get => fecha_hora; set => fecha_hora = value; }
+
     }
 }

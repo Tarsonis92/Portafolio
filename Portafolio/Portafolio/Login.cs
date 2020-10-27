@@ -29,7 +29,7 @@ namespace Portafolio
 
             try {
 
-                usa.Id_usuario = txtNombre.Text;
+                usa.Nombre = txtNombre.Text;
                 usa.Contrasena = txtContrasena.Text;
 
                 
@@ -45,8 +45,6 @@ namespace Portafolio
                 throw;
             
             }
-
-
 
         }
 
