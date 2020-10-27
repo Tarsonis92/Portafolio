@@ -51,17 +51,15 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_DetaReser(int id_detalle, int cantidad_personas, int reservacion_id_reserva)
+        public void Agregar_DetaReser( int cantidad_personas, int reservacion_id_reserva)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_DETA_RESER", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_DETALLE", OracleType.Int32).Value = id_detalle;
-                comando.Parameters.Add("P_CANTIDAD_PERSONAS", OracleType.Int32.Value = cantidad_personas;
-                comando.Parameters.Add("P_RESERVACION_ID_RESERVA", OracleType.Int32).Value = reservacion_id_reserva;
+                command.Parameters.Add("P_CANTIDAD_PERSONAS", OracleType.Int32.Value = cantidad_personas;
+                command.Parameters.Add("P_RESERVACION_ID_RESERVA", OracleType.Int32).Value = reservacion_id_reserva;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Detalle Reserva  Agregado");
             }

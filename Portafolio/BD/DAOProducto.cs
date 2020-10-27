@@ -20,7 +20,7 @@ namespace BD
         OracleDataAdapter adaptador = new OracleDataAdapter();
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-        public void Actualizar_Producto(int id_producto, string nombre, int precio, string descripcion, int id_promocion, int id_orden)
+        public void Actualizar_Producto(int id_producto, string nombre, int precio, string descripcion, int cate_prod_id_categoria)
         {
             try
             {
@@ -34,8 +34,8 @@ namespace BD
                 comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
                 comando.Parameters.Add("P_PRECIO", OracleType.Int32).Value = precio;
                 comando.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
-                comando.Parameters.Add("P_ID_PROMOCION", OracleType.Int32).Value = id_promocion;
-                comando.Parameters.Add("P_ID_ORDEN", OracleType.Int32).Value = id_orden;
+                comando.Parameters.Add("P_CATE_PROD_ID_CATEGORIA", OracleType.Int32).Value = cate_prod_id_categoria;
+
 
 
                 if (result == DialogResult.Yes)
@@ -55,19 +55,18 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_Producto(int id_producto, string nombre, int precio, string descripcion, int id_promocion, int id_orden)
+        public void Agregar_Producto( string nombre, int precio, string descripcion, int cate_prod_id_categoria)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_PRODUCTO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_PRODUCTO", OracleType.Int32).Value = id_producto;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_PRECIO", OracleType.Int32).Value = precio;
-                comando.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
-                comando.Parameters.Add("P_ID_PROMOCION", OracleType.Int32).Value = id_promocion;
-                comando.Parameters.Add("P_ID_ORDEN", OracleType.Int32).Value = id_orden;
+
+                command.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+                command.Parameters.Add("P_PRECIO", OracleType.Int32).Value = precio;
+                command.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
+                command.Parameters.Add("P_CATE_PROD_ID_CATEGORIA", OracleType.Int32).Value = cate_prod_id_categoria;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Usuario Agregado");
             }
@@ -135,8 +134,8 @@ namespace BD
                                 dto.Nombre = dr["NOMBRE"].ToString();
                                 dto.Precio = dr["PRECIO"].ToString();
                                 dto.Descripcion = dr["DESCRIPCION"].ToString();
-                                dto.Id_promocion = dr["ID_PROMOCION"].ToString();
-                                dto.Id_orden = dr["ID_ORDEN"].ToString();
+                                dto.Cate_prod_id_categoria = dr["CATE_PROD_ID_CATEGORIA"].ToString();
+                                
                                 usa.Add(dto);
 
                             }

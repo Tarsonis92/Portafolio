@@ -52,16 +52,16 @@ namespace BD
 
         con.Close();
     }
-    public void Agregar_Promocion(int id_promocion, string nombre, int precio_promocion)
+    public void Agregar_Promocion( string nombre, int precio_promocion)
     {
         try
         {
             con.Open();
-            OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
+            OracleCommand command = new OracleCommand("INSERTAR_PROMOCION", con);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("P_ID_PROMOCION", OracleType.Int32).Value = id_promocion;
-            comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-            comando.Parameters.Add("P_PRECIO_PROMOCION", OracleType.Int32).Value = precio_promocion;
+
+            command.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+            command.Parameters.Add("P_PRECIO_PROMOCION", OracleType.Int32).Value = precio_promocion;
             command.ExecuteNonQuery();
             MessageBox.Show("Promocion Agregada");
         }

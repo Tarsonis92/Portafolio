@@ -60,20 +60,20 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_Usuario(int id_ingrediente, string nombre, DateTime vencimiento, int id_proveedor, int id_producto, int id_promocion, int id_bodega)
+        public void Agregar_Usuario( string nombre, DateTime vencimiento, int id_proveedor, int id_producto, int id_promocion, int id_bodega)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_INGREDIENTE", con);
-               // command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_INGREDIENTE", OracleType.Int32).Value = id_ingrediente;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_VENCIMIENTO", OracleType.Date).Value = vencimiento;
-                comando.Parameters.Add("P_ID_PROVEEDOR", OracleType.Int32).Value = id_proveedor;
-                comando.Parameters.Add("P_ID_PRODUCTO", OracleType.Int32).Value = id_producto;
-                comando.Parameters.Add("P_ID_PROMOCION", OracleType.Int32).Value = id_promocion;
-                comando.Parameters.Add("P_ID_BODEGA", OracleType.Int32).Value = id_bodega;
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+   
+                command.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+                command.Parameters.Add("P_VENCIMIENTO", OracleType.Date).Value = vencimiento;
+                command.Parameters.Add("P_ID_PROVEEDOR", OracleType.Int32).Value = id_proveedor;
+                command.Parameters.Add("P_ID_PRODUCTO", OracleType.Int32).Value = id_producto;
+                command.Parameters.Add("P_ID_PROMOCION", OracleType.Int32).Value = id_promocion;
+                command.Parameters.Add("P_ID_BODEGA", OracleType.Int32).Value = id_bodega;
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Ingrediente Agregado");

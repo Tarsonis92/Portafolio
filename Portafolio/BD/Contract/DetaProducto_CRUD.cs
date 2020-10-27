@@ -11,9 +11,9 @@ namespace BD.Contract
 
         List<T> Listar();
 
-        void Agregar_DetaProducto(int id_detalle, int cantidad, int ingrediente_id_ingrediente, int producto_id_producto)
-        void Actualizar_DetaProducto(int id_detalle, int cantidad, int ingrediente_id_ingrediente, int producto_id_producto)
-        void Eliminar_DetaProducto(int id_detalle)
+        void Agregar_DetaProducto( int cantidad, int ingrediente_id_ingrediente, int producto_id_producto);
+        void Actualizar_DetaProducto(int id_detalle, int cantidad, int ingrediente_id_ingrediente, int producto_id_producto);
+        void Eliminar_DetaProducto(int id_detalle);
 
 
     }

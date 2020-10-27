@@ -50,7 +50,7 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_Bodega(int id_bodega, int stock)
+        public void Agregar_Bodega( int stock)
         {
             try
             {
@@ -58,7 +58,6 @@ namespace BD
                 con.Open();
                 OracleCommand comando = new OracleCommand("ACTUALIZAR_BODEGA", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_BODEGA", OracleType.Int32).Value = id_bodega;
                 comando.Parameters.Add("P_STOCK", OracleType.Int32).Value = stock;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Bodega Agregada");

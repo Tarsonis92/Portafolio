@@ -54,20 +54,19 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_Proveedor(int id_proveedor, string nombre, string direccion, string rut, int telefono, string correo)
+        public void Agregar_Proveedor( string nombre, string direccion, string rut, int telefono, string correo)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_PROVEEDOR", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_PROVEEDOR", OracleType.Int32).Value = id_proveedor;
-                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
-                comando.Parameters.Add("P_DIRECCION", OracleType.VarChar).Value = direccion;
-                comando.Parameters.Add("P_RUT", OracleType.VarChar).Value = rut;
-                comando.Parameters.Add("P_TELEFONO", OracleType.Int32).Value = telefono;
-                comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
+
+                command.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+                command.Parameters.Add("P_DIRECCION", OracleType.VarChar).Value = direccion;
+                command.Parameters.Add("P_RUT", OracleType.VarChar).Value = rut;
+                command.Parameters.Add("P_TELEFONO", OracleType.Int32).Value = telefono;
+                command.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Proveedor Agregado");

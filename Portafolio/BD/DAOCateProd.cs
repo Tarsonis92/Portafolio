@@ -53,14 +53,13 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_CateProd(int id_categoria, String nombre, String descripcion)
+        public void Agregar_CateProd( String nombre, String descripcion)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_CATEGORIA", OracleType.Int32).Value = id_categoria;
                 comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
                 comando.Parameters.Add("P_DESCRIPCION", OracleType.VarChar).Value = descripcion;
                 command.ExecuteNonQuery();

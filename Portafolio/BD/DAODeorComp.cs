@@ -53,17 +53,17 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_DeorComp(int id_detalle, int cantidad, int total_compra, int orden_compra_id_compra)
+        public void Agregar_DeorComp( int cantidad, int total_compra, int orden_compra_id_compra)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_DEOR_COMP", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_DETALLE", OracleType.Int32).Value = id_detalle;
-                comando.Parameters.Add("P_CANTIDAD", OracleType.Int32).Value = cantidad;
-                comando.Parameters.Add("P_TOTAL_COMPRA", OracleType.Int32).Value = total_compra;
-                comando.Parameters.Add("P_ORDEN_COMPRA_ID_COMPRA", OracleType.Int32).Value = orden_compra_id_compra;
+              
+                command.Parameters.Add("P_CANTIDAD", OracleType.Int32).Value = cantidad;
+                command.Parameters.Add("P_TOTAL_COMPRA", OracleType.Int32).Value = total_compra;
+                command.Parameters.Add("P_ORDEN_COMPRA_ID_COMPRA", OracleType.Int32).Value = orden_compra_id_compra;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Orden De Compra Agregada");
             }

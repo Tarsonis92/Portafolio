@@ -20,7 +20,7 @@ namespace BD
 
 
 
-        public void Actualizar_Reservacion(int id_reservacion, DateTime fecha_hora, int id_usuario)
+        public void Actualizar_Reservacion(int id_reservacion, DateTime fecha_hora, int usuario_id_usuario,int mesa_id_mesa)
         {
             try
             {
@@ -30,10 +30,10 @@ namespace BD
                 con.Open();
                 OracleCommand comando = new OracleCommand("ACTUALIZAR_RESERVACION", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value =id_reservacion ;
+                comando.Parameters.Add("P_ID_RESERVAC", OracleType.Int32).Value =id_reservacion ;
                 comando.Parameters.Add("P_FECHA_HORA", OracleType.VarChar).Value = fecha_hora;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
-                
+                comando.Parameters.Add("P_USUARIO_ID_USUARIO", OracleType.Int32).Value = usuario_id_usuario;
+                comando.Parameters.Add("P_MESA_ID_MESA", OracleType.Int32).Value = mesa_id_mesa;
 
 
                 if (result == DialogResult.Yes)
@@ -53,16 +53,18 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_Reservacion(int id_reservacion, DateTime fecha_hora, int id_usuario)
+        public void Agregar_Reservacion( DateTime fecha_hora, int usuario_id_usuario, int mesa_id_mesa)
         {
             try
             {
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_RESERVACION", con);
-                comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value = id_reservacion;
-                comando.Parameters.Add("P_FECHA_HORA", OracleType.VarChar).Value = fecha_hora;
-                comando.Parameters.Add("P_ID_USUARIO", OracleType.Int32).Value = id_usuario;
+                OracleCommand command = new OracleCommand("ACTUALIZAR_RESERVACION", con);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+                command.Parameters.Add("P_FECHA_HORA", OracleType.VarChar).Value = fecha_hora;
+                command.Parameters.Add("P_USUARIO_ID_USUARIO", OracleType.Int32).Value = usuario_id_usuario;
+                command.Parameters.Add("P_MESA_ID_MESA", OracleType.Int32).Value = mesa_id_mesa;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Reservación Agregada");
             }
@@ -125,9 +127,10 @@ namespace BD
                             {
 
                                 dto = new Usuario();
-                                dto.Id_reservacion = dr["ID_RESERVACION"].ToString();
+                                dto.Id_reserva = dr["ID_RESERVA"].ToString();
                                 dto.Fecha_hora = dr["FECHA_HORA"].ToString();
-                                dto.Id_usuario = dr["ID_USUARIO"].ToString();
+                                dto.Usuario_id_usuario = dr["USUARIO_ID_USUARIO"].ToString();
+                                dto.Usuario_id_usuario = dr["MESA_ID_MESA"].ToString();
                                 usa.Add(dto);
 
                             }

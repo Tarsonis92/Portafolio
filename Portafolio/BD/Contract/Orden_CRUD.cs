@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace BD.Contract
 {
-    interface Bodega_CRUD<T>
+    interface Orden_CRUD<T>
     {
 
         List<T> Listar();
 
-        void Agregar_Bodega( int stock);
-        void Actualizar_Bodega((int id_bodega,  int stock);
-        void Eliminar_Bodega(int id_bodega);
+        void Agregar_Orden( int mesa_id_mesa);
+        void Actualizar_Orden(int id_orden, int mesa_id_mesa);
+        void Eliminar_Orden(int id_orden);
+
+
     }
 }

@@ -55,14 +55,14 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_DetaFactura(int id_detalle, int total_factura, int vuelto, DateTime fecha_pago, int factura_id_factura)
+        public void Agregar_DetaFactura( int total_factura, int vuelto, DateTime fecha_pago, int factura_id_factura)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_DETA_FACTURA", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_DETALLE", OracleType.Int32).Value = id_detalle;
+
                 comando.Parameters.Add("P_TOTAL_FACTURA", OracleType.Int32).Value = total_factura;
                 comando.Parameters.Add("P_VUELTO", OracleType.Int32).Value = vuelto;
                 comando.Parameters.Add("P_FECHA_PAGO", OracleType.Date).Value = fecha_pago;

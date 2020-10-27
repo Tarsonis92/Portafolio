@@ -19,7 +19,7 @@ public class DAOMesa
 	OracleDataAdapter adaptador = new OracleDataAdapter();
 	OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
 
-	public void Actualizar_Mesa(int id_mesa, int capacidad, int id_reservacion)
+	public void Actualizar_Mesa(int id_mesa, int capacidad)
     {
         try
             {
@@ -31,7 +31,7 @@ public class DAOMesa
            // comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("P_ID_MESA", OracleType.Int32).Value = id_mesa;
             comando.Parameters.Add("P_CAPACIDAD", OracleType.number).Value = capacidad;
-            comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value = id_reservacion;
+            
 
 
             if (result == DialogResult.Yes)
@@ -51,16 +51,15 @@ public class DAOMesa
 
         con.Close();
     }
-    public void Agregar_Mesa(int id_mesa, int capacidad, int id_reservacion)
+    public void Agregar_Mesa( int capacidad)
     {
         try
         {
             con.Open();
             OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
-            //command.CommandType = System.Data.CommandType.StoredProcedure;
-            comando.Parameters.Add("P_ID_MESA", OracleType.Int32).Value = id_mesa;
-            comando.Parameters.Add("P_CAPACIDAD", OracleType.number).Value = capacidad;
-            comando.Parameters.Add("P_ID_RESERVACION", OracleType.Int32).Value = id_reservacion;
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            
+            command.Parameters.Add("P_CAPACIDAD", OracleType.number).Value = capacidad;
             command.ExecuteNonQuery();
             MessageBox.Show("Mesa Agregada");
         }
@@ -127,7 +126,7 @@ public class DAOMesa
                                 dto = new Usuario();
                                 dto.Id_mesa = dr["ID_MESA"].ToString();
                                 dto.Capacidad = dr["CAPACIDAD"].ToString();
-                                dto.Id_reservacion = dr["ID_RESERVACION"].ToString();
+                      
                                 
                             }
                         }

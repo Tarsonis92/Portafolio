@@ -57,16 +57,16 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_Factura(int id_factura, DateTime fecha_emision, Char estado)
+        public void Agregar_Factura( DateTime fecha_emision, Char estado)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_USUARIO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_FACTURA", OracleType.Int32).Value = id_factura;
-                comando.Parameters.Add("P_FECHA_EMISION", OracleType.Date).Value = fecha_emision;
-                comando.Parameters.Add("P_ESTADO", OracleType.Char).Value = estado;
+  
+                command.Parameters.Add("P_FECHA_EMISION", OracleType.Date).Value = fecha_emision;
+                command.Parameters.Add("P_ESTADO", OracleType.Char).Value = estado;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Factura Agregada");
             }

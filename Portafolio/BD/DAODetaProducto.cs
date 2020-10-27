@@ -55,14 +55,14 @@ namespace BD
             con.Close();
         }
 
-        public void Agregar_DetaProducto(int id_detalle, int cantidad, int ingrediente_id_ingrediente, int producto_id_producto)
+        public void Agregar_DetaProducto( int cantidad, int ingrediente_id_ingrediente, int producto_id_producto)
         {
             try
             {
                 con.Open();
                 OracleCommand command = new OracleCommand("INSERTAR_DETA_PRODUCTO", con);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_DETALLE", OracleType.Int32).Value = id_detalle;
+     
                 comando.Parameters.Add("P_CANTIDAD", OracleType.Int32).Value = cantidad;
                 comando.Parameters.Add("P_INGREDIENTE_ID_INGREDIENTE", OracleType.Int32).Value = ingrediente_id_ingrediente;
                 comando.Parameters.Add("P_PRODUCTO_ID_PRODUCTO", OracleType.Int32).Value = producto_id_producto;

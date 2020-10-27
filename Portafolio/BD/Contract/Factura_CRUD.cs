@@ -11,7 +11,7 @@ namespace BD.Contract
 
         List<T> Listar();
   
-        void Agregar_Factura(int id_factura, DateTime fecha_emision, char estado);
+        void Agregar_Factura( DateTime fecha_emision, char estado);
         void Actualizar_Factura(int id_factura, DateTime fecha_emision, char estado);
         void Eliminar_Factura(int id_factura);
     

@@ -9,37 +9,35 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-
-
 namespace BD
 {
-    public class DAOOrden
+    public class DAOEstadoPago 
     {
-       // Usuario dto = new Usuario();
+        EstadoPago dto = new EstadoPago();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
-      // hay que tener ojo con el datetime 
 
-        public void Actualizar_Orden(int id_orden,  int mesa_id_mesa)
+
+
+        public void Actualizar_Estado_Pago(int id_estado, string nombre)
         {
             try
             {
 
-                DialogResult result = MessageBox.Show("¿Desea Actualizar La Orden?", "Actualizar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Actualizar El Estado De Pago?", "Actualizar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ACTUALIZAR_ORDEN", con);
+                OracleCommand comando = new OracleCommand("ACTUALIZAR_ESTADO_PAGO", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_ORDEN", OracleType.Int32).Value = id_orden;
-                comando.Parameters.Add("P_MESA_ID_MESA", OracleType.Int32).Value = mesa_id_mesa;
-   
+                comando.Parameters.Add("P_ID_ESTADO", OracleType.Int32).Value = id_estado;
+                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
 
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Orden Actualizada");
+                    MessageBox.Show("Estado De Pago  Actualizado");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -53,17 +51,20 @@ namespace BD
 
             con.Close();
         }
-        public void Agregar_Orden( int mesa_id_mesa)
+
+
+        public void Agregar_Estado_Pago(int id_estado, string nombre)
         {
             try
             {
                 con.Open();
-                OracleCommand command = new OracleCommand("INSERTAR_ORDEN", con);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-            
-                command.Parameters.Add("P_MESA_ID_MESA", OracleType.Int32).Value = mesa_id_mesa;
+                OracleCommand comando = new OracleCommand("INSERTAR_USUARIO", con);
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.Parameters.Add("P_ID_ESTADO", OracleType.Int32).Value = id_estado;
+                comando.Parameters.Add("P_NOMBRE", OracleType.VarChar).Value = nombre;
+
                 command.ExecuteNonQuery();
-                MessageBox.Show("Orden Agregada");
+                MessageBox.Show("Estado De Pago  Agregado");
             }
 
             catch (Exception)
@@ -73,21 +74,23 @@ namespace BD
             con.Close();
         }
 
-        public void Eliminar_Orden(int id_orden)
+
+
+        public void Eliminar_Usuario(int id_estado)
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea Eliminar La Orden?", "Eliminar", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("¿Desea Eliminar El Estado De Pago?", "Eliminar", MessageBoxButtons.YesNo);
 
                 con.Open();
-                OracleCommand comando = new OracleCommand("ELIMINAR_ORDEN", con);
+                OracleCommand comando = new OracleCommand("ELIMINAR_ESTADO_PAGO", con);
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.Parameters.Add("P_ID_ORDEN", OracleType.Int32).Value = id_orden;
+                comando.Parameters.Add("P_ID_ESTADO", OracleType.Int32).Value = id_estado;
 
                 if (result == DialogResult.Yes)
                 {
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Orden Eliminada");
+                    MessageBox.Show("Estado De Pago  Eliminado");
                 }
                 else if (result == DialogResult.No)
                 {
@@ -103,17 +106,17 @@ namespace BD
             con.Close();
         }
 
-        public List<Orden> Listar()
+        public List<EstadoPago> Listar()
         {
-            List<Orden> usa = new List<Orden>();
-            Orden dto = null;
+            List<EstadoPago> usa = new List<EstadoPago>();
+            Usuario dto = null;
             try
             {
                 using (OracleConnection con = new OracleConnection())
                 {
 
                     con.Open();
-                    using (OracleCommand comando = new OracleCommand("SP_SELECT_ORDEN", con))
+                    using (OracleCommand comando = new OracleCommand("SP_SELECT_ESTADO_PAGO", con))
                     {
                         comando.CommandType = System.Data.CommandType.StoredProcedure;
                         comando.Parameters.Add(new OracleParameter("P_CURSOR", OracleType.Cursor)).Direction = System.Data.ParameterDirection.Output;
@@ -124,11 +127,10 @@ namespace BD
                             while (dr.Read())
                             {
 
-                                dto = new Orden();
-                                dto.Id_orden = dr["ID_ORDEN"].ToString();
-                                dto.Fecha_Hora = dr["FECHA_HORA"].ToString();
-                                dto.Id_factura = dr["ID_FACTURA"].ToString();
-                                dto.Id_mesa = dr["ID_MESA"].ToString();
+                                dto = new EstadoPago();
+                                dto.Id_usuario = Convert.ToInt32(dr["ID_ESTADO"].ToString());
+                                dto.Nombre = dr["NOMBRE"].ToString();
+                              
                                 usa.Add(dto);
 
                             }
@@ -144,8 +146,6 @@ namespace BD
             }
             return usa;
         }
-
-
+    }
 }
-
 
