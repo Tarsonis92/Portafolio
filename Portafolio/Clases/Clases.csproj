@@ -59,7 +59,6 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Registro_Bodega.cs" />
     <Compile Include="Reservacion.cs" />
-    <Compile Include="Tipo_Promocion.cs" />
     <Compile Include="Tipo_Usuario.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

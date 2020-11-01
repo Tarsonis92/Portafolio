@@ -63,23 +63,71 @@
     <Compile Include="Administracion_Bodega.Designer.cs">
       <DependentUpon>Administracion_Bodega.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion_Usuario.cs">
+    <Compile Include="Administracion_Factura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administracion_Usuario.Designer.cs">
-      <DependentUpon>Administracion_Usuario.cs</DependentUpon>
+    <Compile Include="Administracion_Factura.Designer.cs">
+      <DependentUpon>Administracion_Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion_Finanzas.cs">
+    <Compile Include="Administracion_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administracion_Finanzas.Designer.cs">
-      <DependentUpon>Administracion_Finanzas.cs</DependentUpon>
+    <Compile Include="Administracion_Producto.Designer.cs">
+      <DependentUpon>Administracion_Producto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editar_Usuario.cs">
+    <Compile Include="Administracion_Ingrediente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editar_Usuario.Designer.cs">
-      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    <Compile Include="Administracion_Ingrediente.Designer.cs">
+      <DependentUpon>Administracion_Ingrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion_Reservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion_Reservacion.Designer.cs">
+      <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Mesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Mesa.Designer.cs">
+      <DependentUpon>Administrar_Mesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Proveedor.Designer.cs">
+      <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administra_Orden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administra_Orden.Designer.cs">
+      <DependentUpon>Administra_Orden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Usuario.Designer.cs">
+      <DependentUpon>Administrar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cocina.Designer.cs">
+      <DependentUpon>Cocina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -87,22 +135,55 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opciones_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opciones_Admin.Designer.cs">
+      <DependentUpon>Opciones_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Administracion_Bodega.resx">
       <DependentUpon>Administracion_Bodega.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_Usuario.resx">
-      <DependentUpon>Administracion_Usuario.cs</DependentUpon>
+    <EmbeddedResource Include="Administracion_Factura.resx">
+      <DependentUpon>Administracion_Factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_Finanzas.resx">
-      <DependentUpon>Administracion_Finanzas.cs</DependentUpon>
+    <EmbeddedResource Include="Administracion_Producto.resx">
+      <DependentUpon>Administracion_Producto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editar_Usuario.resx">
-      <DependentUpon>Editar_Usuario.cs</DependentUpon>
+    <EmbeddedResource Include="Administracion_Ingrediente.resx">
+      <DependentUpon>Administracion_Ingrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion_Reservacion.resx">
+      <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Mesa.resx">
+      <DependentUpon>Administrar_Mesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Proveedor.resx">
+      <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administra_Orden.resx">
+      <DependentUpon>Administra_Orden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Usuario.resx">
+      <DependentUpon>Administrar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cocina.resx">
+      <DependentUpon>Cocina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opciones_Admin.resx">
+      <DependentUpon>Opciones_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

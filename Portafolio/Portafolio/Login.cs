@@ -29,7 +29,7 @@ namespace Portafolio
 
             try {
 
-                usa.Id_usuario = txtNombre.Text;
+                usa.Nombre = txtNombre.Text;
                 usa.Contrasena = txtContrasena.Text;
 
                 
@@ -46,8 +46,6 @@ namespace Portafolio
             
             }
 
-
-
         }
 
         public void limpiarTextos() {
@@ -63,7 +61,7 @@ namespace Portafolio
             }
             else 
             {
-                Administracion_Usuario cliente = new Administracion_Usuario();
+                Inicio cliente = new Inicio();
                 cliente.Show();
 
             }

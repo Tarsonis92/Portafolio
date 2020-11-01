@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace BD
 {
@@ -16,9 +17,9 @@ namespace BD
         Usuario dto = new Usuario();
         OracleCommand comando = new OracleCommand();
         OracleDataAdapter adaptador = new OracleDataAdapter();
-        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=portafolio;USER ID=portafolio");
+        OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
 
-       
+
 
         public void Actualizar_Usuario(int id_usuario, string nombre, string apellido, string contrasena, string correo, int id_tipo)
         {
@@ -79,7 +80,7 @@ namespace BD
             con.Close();
         }
 
-       
+
 
         public void Eliminar_Usuario(int id_usuario)
         {
@@ -111,7 +112,7 @@ namespace BD
             con.Close();
         }
 
-       
+
 
         public List<Usuario> Listar()
         {
@@ -138,7 +139,7 @@ namespace BD
                                 dto.Id_usuario = Convert.ToInt32(dr["ID_USUARIO"].ToString());
                                 dto.Nombre = dr["NOMBRE"].ToString();
                                 dto.Apellido = dr["APELLIDO"].ToString();
-                                dto.Contrasena = dr["CONTRASENA"].ToString();
+                                dto.Contrasena = dr["CONTRASEÑA"].ToString();
                                 dto.Correo = dr["CORREO"].ToString();
                                 dto.Id_tipo = dr["ID_TIPO"].ToString();
                                 usa.Add(dto);
@@ -156,5 +157,8 @@ namespace BD
             }
             return usa;
         }
+
+        
     }
+
 }
