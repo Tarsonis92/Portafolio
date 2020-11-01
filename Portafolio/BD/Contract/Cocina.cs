@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BD.Contract
 {
-    interface TipoUsuario_CRUD<T>
+    interface Cocina<T>
     {
 
         List<T> Listar();
 
-        void Agregar_Tipo_Usuario(int id_tipo, string nombre);
+       /* void Agregar_Tipo_Usuario(int id_tipo, string nombre);
         void Actualizar_Tipo_Usuario(int id_tipo, string nombre);
-        void Eliminar_Tipo_Usuario(int id_tipo);
+        void Eliminar_Tipo_Usuario(int id_tipo);*/
 
 
     }

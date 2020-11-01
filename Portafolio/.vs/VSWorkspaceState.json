@@ -3,9 +3,8 @@
     "",
     "\\BD",
     "\\BD\\Contract",
-    "\\Clases",
-    "\\Portafolio"
+    "\\Clases"
   ],
-  "SelectedNode": "\\BD\\obj",
+  "SelectedNode": "\\Clases\\Orden_Compra.cs",
   "PreviewInSolutionExplorer": false
 }
