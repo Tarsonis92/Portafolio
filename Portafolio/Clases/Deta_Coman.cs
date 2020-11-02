@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Deta_Reser
+    class Deta_Coman
     {
         private int id_detalle;
-        private int cantidad_personas;
+        private int cantidad;
 
-        public Deta_Reser(int id_detalle, int cantidad_personas)
+        public Deta_Coman(int id_detalle, int cantidad)
         {
             this.id_detalle = id_detalle;
-            this.cantidad_personas = cantidad_personas;
+            this.cantidad = cantidad;
         }
 
         public int Id_detalle { get => id_detalle; set => id_detalle = value; }
-        public int Cantidad_personas { get => cantidad_personas; set => cantidad_personas = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
     }
 }

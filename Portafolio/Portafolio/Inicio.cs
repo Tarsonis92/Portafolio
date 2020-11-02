@@ -31,13 +31,25 @@ namespace Portafolio
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            Clientes clientes = new Clientes();
+            Recepcion clientes = new Recepcion();
             clientes.Show();
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBodega_Click(object sender, EventArgs e)
+        {
+            Bodega bodega = new Bodega();
+            bodega.Show();
+        }
+
+        private void btnFinanzas_Click(object sender, EventArgs e)
+        {
+            Finanzas finanzas = new Finanzas();
+            finanzas.Show();
         }
     }
 }

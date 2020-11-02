@@ -37,7 +37,7 @@ namespace BD
                 comando.Parameters.Add("P_CONTRASENA", OracleType.VarChar).Value = contrasena;
                 comando.Parameters.Add("P_CORREO", OracleType.VarChar).Value = correo;
                 comando.Parameters.Add("P_ID_TIPO", OracleType.Int32).Value = id_tipo;
-
+                
 
                 if (result == DialogResult.Yes)
                 {
@@ -141,7 +141,7 @@ namespace BD
                                 dto.Apellido = dr["APELLIDO"].ToString();
                                 dto.Contrasena = dr["CONTRASEÑA"].ToString();
                                 dto.Correo = dr["CORREO"].ToString();
-                                dto.Id_tipo = dr["ID_TIPO"].ToString();
+                                dto.Id_tipo = Convert.ToInt32(dr["ID_TIPO"].ToString());
                                 usa.Add(dto);
 
                             }

@@ -1,6 +1,6 @@
 ﻿namespace Portafolio
 {
-    partial class Administracion_Bodega
+    partial class Administrar_Comanda
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,11 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.txtId_Bodega = new MetroFramework.Controls.MetroTextBox();
-            this.txtStock = new MetroFramework.Controls.MetroTextBox();
-            this.txtId_Registro = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.txtId_Comanda = new MetroFramework.Controls.MetroTextBox();
+            this.txtHora_Salida = new MetroFramework.Controls.MetroTextBox();
+            this.txtHora_Orden = new MetroFramework.Controls.MetroTextBox();
+            this.dtpFecha_Orden = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
@@ -44,84 +46,100 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(44, 71);
+            this.metroLabel1.Location = new System.Drawing.Point(73, 78);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(85, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Id_Bodega:";
+            this.metroLabel1.Text = "Id Comanda:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(306, 71);
+            this.metroLabel2.Location = new System.Drawing.Point(375, 78);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(88, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Stock:";
+            this.metroLabel2.Text = "Fecha Orden:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(528, 75);
+            this.metroLabel3.Location = new System.Drawing.Point(73, 120);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(90, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Id_Registro:";
+            this.metroLabel3.Text = "Hora Entrada:";
             // 
-            // txtId_Bodega
+            // metroLabel4
             // 
-            this.txtId_Bodega.Location = new System.Drawing.Point(125, 71);
-            this.txtId_Bodega.Name = "txtId_Bodega";
-            this.txtId_Bodega.Size = new System.Drawing.Size(159, 23);
-            this.txtId_Bodega.TabIndex = 3;
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(383, 116);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel4.TabIndex = 3;
+            this.metroLabel4.Text = "Hora Salida:";
             // 
-            // txtStock
+            // txtId_Comanda
             // 
-            this.txtStock.Location = new System.Drawing.Point(355, 71);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(159, 23);
-            this.txtStock.TabIndex = 4;
+            this.txtId_Comanda.Location = new System.Drawing.Point(164, 74);
+            this.txtId_Comanda.Name = "txtId_Comanda";
+            this.txtId_Comanda.Size = new System.Drawing.Size(179, 23);
+            this.txtId_Comanda.TabIndex = 4;
             // 
-            // txtId_Registro
+            // txtHora_Salida
             // 
-            this.txtId_Registro.Location = new System.Drawing.Point(611, 75);
-            this.txtId_Registro.Name = "txtId_Registro";
-            this.txtId_Registro.Size = new System.Drawing.Size(159, 23);
-            this.txtId_Registro.TabIndex = 5;
+            this.txtHora_Salida.Location = new System.Drawing.Point(469, 116);
+            this.txtHora_Salida.Name = "txtHora_Salida";
+            this.txtHora_Salida.Size = new System.Drawing.Size(200, 23);
+            this.txtHora_Salida.TabIndex = 5;
+            // 
+            // txtHora_Orden
+            // 
+            this.txtHora_Orden.Location = new System.Drawing.Point(169, 116);
+            this.txtHora_Orden.Name = "txtHora_Orden";
+            this.txtHora_Orden.Size = new System.Drawing.Size(174, 23);
+            this.txtHora_Orden.TabIndex = 6;
+            // 
+            // dtpFecha_Orden
+            // 
+            this.dtpFecha_Orden.Location = new System.Drawing.Point(469, 78);
+            this.dtpFecha_Orden.Name = "dtpFecha_Orden";
+            this.dtpFecha_Orden.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha_Orden.TabIndex = 7;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(154, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 221);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(489, 242);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.Size = new System.Drawing.Size(729, 206);
+            this.dataGridView1.TabIndex = 8;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(230, 122);
+            this.btnAgregar.Location = new System.Drawing.Point(215, 161);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.Size = new System.Drawing.Size(112, 54);
+            this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(331, 122);
+            this.btnActualizar.Location = new System.Drawing.Point(333, 161);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.Size = new System.Drawing.Size(112, 54);
+            this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(439, 122);
+            this.btnEliminar.Location = new System.Drawing.Point(451, 161);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.Size = new System.Drawing.Size(112, 54);
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             // 
-            // Administracion_Bodega
+            // Administrar_Comanda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,14 +148,16 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtId_Registro);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.txtId_Bodega);
+            this.Controls.Add(this.dtpFecha_Orden);
+            this.Controls.Add(this.txtHora_Orden);
+            this.Controls.Add(this.txtHora_Salida);
+            this.Controls.Add(this.txtId_Comanda);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Administracion_Bodega";
-            this.Text = "Administracion_Bodega";
+            this.Name = "Administrar_Comanda";
+            this.Text = "Administrar_Comanda";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,9 +169,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroTextBox txtId_Bodega;
-        private MetroFramework.Controls.MetroTextBox txtStock;
-        private MetroFramework.Controls.MetroTextBox txtId_Registro;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTextBox txtId_Comanda;
+        private MetroFramework.Controls.MetroTextBox txtHora_Salida;
+        private MetroFramework.Controls.MetroTextBox txtHora_Orden;
+        private System.Windows.Forms.DateTimePicker dtpFecha_Orden;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;

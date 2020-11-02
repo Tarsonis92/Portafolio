@@ -34,7 +34,7 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.txtId_Reserva = new MetroFramework.Controls.MetroTextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.txtId_Usuario = new MetroFramework.Controls.MetroTextBox();
+            this.txtId_Cliente = new MetroFramework.Controls.MetroTextBox();
             this.txtId_Mesa = new MetroFramework.Controls.MetroTextBox();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
@@ -66,9 +66,9 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(101, 120);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Id Usuario:";
+            this.metroLabel3.Text = "Id Cliente:";
             // 
             // metroLabel4
             // 
@@ -93,12 +93,12 @@
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 5;
             // 
-            // txtId_Usuario
+            // txtId_Cliente
             // 
-            this.txtId_Usuario.Location = new System.Drawing.Point(184, 115);
-            this.txtId_Usuario.Name = "txtId_Usuario";
-            this.txtId_Usuario.Size = new System.Drawing.Size(187, 23);
-            this.txtId_Usuario.TabIndex = 6;
+            this.txtId_Cliente.Location = new System.Drawing.Point(184, 115);
+            this.txtId_Cliente.Name = "txtId_Cliente";
+            this.txtId_Cliente.Size = new System.Drawing.Size(187, 23);
+            this.txtId_Cliente.TabIndex = 6;
             // 
             // txtId_Mesa
             // 
@@ -149,7 +149,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvTabla);
             this.Controls.Add(this.txtId_Mesa);
-            this.Controls.Add(this.txtId_Usuario);
+            this.Controls.Add(this.txtId_Cliente);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtId_Reserva);
             this.Controls.Add(this.metroLabel4);
@@ -172,7 +172,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox txtId_Reserva;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private MetroFramework.Controls.MetroTextBox txtId_Usuario;
+        private MetroFramework.Controls.MetroTextBox txtId_Cliente;
         private MetroFramework.Controls.MetroTextBox txtId_Mesa;
         private System.Windows.Forms.DataGridView dgvTabla;
         private MetroFramework.Controls.MetroButton btnAgregar;

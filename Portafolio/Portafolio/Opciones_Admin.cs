@@ -31,7 +31,7 @@ namespace Portafolio
 
         private void btnOrden_Click(object sender, EventArgs e)
         {
-            Administra_Orden orden = new Administra_Orden();
+            Administra_Orden_Compra orden = new Administra_Orden_Compra();
             orden.Show();
         }
 
@@ -47,16 +47,18 @@ namespace Portafolio
             mesa.Show();
         }
 
-        private void btnBodega_Click(object sender, EventArgs e)
+       
+
+        private void btnCuenta_Click(object sender, EventArgs e)
         {
-            Administracion_Bodega bodega = new Administracion_Bodega();
-            bodega.Show();
+            Administrar_Cuenta cuenta = new Administrar_Cuenta();
+            cuenta.Show();
         }
 
-        private void btnFactura_Click(object sender, EventArgs e)
+        private void btnComanda_Click(object sender, EventArgs e)
         {
-            Administracion_Factura factura = new Administracion_Factura();
-            factura.Show();
+            Administrar_Comanda comanda = new Administrar_Comanda();
+            comanda.Show();
         }
     }
 }

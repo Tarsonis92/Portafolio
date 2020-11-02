@@ -36,13 +36,15 @@
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.cbxEstado = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(162, 83);
+            this.metroLabel1.Location = new System.Drawing.Point(23, 86);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(62, 19);
             this.metroLabel1.TabIndex = 0;
@@ -51,7 +53,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(412, 83);
+            this.metroLabel2.Location = new System.Drawing.Point(271, 86);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 19);
             this.metroLabel2.TabIndex = 1;
@@ -59,14 +61,14 @@
             // 
             // txtId_Mesa
             // 
-            this.txtId_Mesa.Location = new System.Drawing.Point(230, 83);
+            this.txtId_Mesa.Location = new System.Drawing.Point(106, 88);
             this.txtId_Mesa.Name = "txtId_Mesa";
             this.txtId_Mesa.Size = new System.Drawing.Size(159, 23);
             this.txtId_Mesa.TabIndex = 3;
             // 
             // txtCapacidad
             // 
-            this.txtCapacidad.Location = new System.Drawing.Point(493, 83);
+            this.txtCapacidad.Location = new System.Drawing.Point(352, 86);
             this.txtCapacidad.Name = "txtCapacidad";
             this.txtCapacidad.Size = new System.Drawing.Size(159, 23);
             this.txtCapacidad.TabIndex = 4;
@@ -103,11 +105,31 @@
             this.metroButton3.TabIndex = 8;
             this.metroButton3.Text = "Eliminar";
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(539, 88);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(51, 19);
+            this.metroLabel3.TabIndex = 9;
+            this.metroLabel3.Text = "Estado:";
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.ItemHeight = 23;
+            this.cbxEstado.Location = new System.Drawing.Point(596, 82);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(153, 29);
+            this.cbxEstado.TabIndex = 10;
+            // 
             // Administrar_Mesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxEstado);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -117,7 +139,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Administrar_Mesa";
-            this.Text = "Bodega";
+            this.Text = "Administrar_Mesa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,5 +156,7 @@
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroComboBox cbxEstado;
     }
 }

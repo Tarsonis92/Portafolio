@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administracion_Bodega : MetroFramework.Forms.MetroForm
+    public partial class Jugos_Naturales : MetroFramework.Forms.MetroForm
     {
-        public Administracion_Bodega()
+        public Jugos_Naturales()
         {
             InitializeComponent();
         }

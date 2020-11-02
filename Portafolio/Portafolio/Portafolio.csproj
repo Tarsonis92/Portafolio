@@ -57,17 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administracion_Bodega.cs">
+    <Compile Include="Adhereso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administracion_Bodega.Designer.cs">
-      <DependentUpon>Administracion_Bodega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Administracion_Factura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administracion_Factura.Designer.cs">
-      <DependentUpon>Administracion_Factura.cs</DependentUpon>
+    <Compile Include="Adhereso.Designer.cs">
+      <DependentUpon>Adhereso.cs</DependentUpon>
     </Compile>
     <Compile Include="Administracion_Producto.cs">
       <SubType>Form</SubType>
@@ -87,6 +81,18 @@
     <Compile Include="Administracion_Reservacion.Designer.cs">
       <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrar_Comanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Comanda.Designer.cs">
+      <DependentUpon>Administrar_Comanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Cuenta.Designer.cs">
+      <DependentUpon>Administrar_Cuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrar_Mesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,11 +105,11 @@
     <Compile Include="Administrar_Proveedor.Designer.cs">
       <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administra_Orden.cs">
+    <Compile Include="Administra_Orden_Compra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administra_Orden.Designer.cs">
-      <DependentUpon>Administra_Orden.cs</DependentUpon>
+    <Compile Include="Administra_Orden_Compra.Designer.cs">
+      <DependentUpon>Administra_Orden_Compra.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrar_Usuario.cs">
       <SubType>Form</SubType>
@@ -111,11 +117,41 @@
     <Compile Include="Administrar_Usuario.Designer.cs">
       <DependentUpon>Administrar_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
+    <Compile Include="Bebidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="Bebidas.Designer.cs">
+      <DependentUpon>Bebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bocadillos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bocadillos.Designer.cs">
+      <DependentUpon>Bocadillos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega.Designer.cs">
+      <DependentUpon>Bodega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carta_Presentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta_Presentacion.Designer.cs">
+      <DependentUpon>Carta_Presentacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mozo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mozo.Designer.cs">
+      <DependentUpon>Mozo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recepcion.Designer.cs">
+      <DependentUpon>Recepcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Cocina.cs">
       <SubType>Form</SubType>
@@ -123,11 +159,41 @@
     <Compile Include="Cocina.Designer.cs">
       <DependentUpon>Cocina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ensalada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ensalada.Designer.cs">
+      <DependentUpon>Ensalada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada.Designer.cs">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas.Designer.cs">
+      <DependentUpon>Finanzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fondos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fondos.Designer.cs">
+      <DependentUpon>Fondos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jugos_Naturales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jugos_Naturales.Designer.cs">
+      <DependentUpon>Jugos_Naturales.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -141,13 +207,34 @@
     <Compile Include="Opciones_Admin.Designer.cs">
       <DependentUpon>Opciones_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Postres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Postres.Designer.cs">
+      <DependentUpon>Postres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administracion_Bodega.resx">
-      <DependentUpon>Administracion_Bodega.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_Factura.resx">
-      <DependentUpon>Administracion_Factura.cs</DependentUpon>
+    <Compile Include="Sandwich_Hamburgesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sandwich_Hamburgesas.Designer.cs">
+      <DependentUpon>Sandwich_Hamburgesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sopas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sopas.Designer.cs">
+      <DependentUpon>Sopas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vinos.Designer.cs">
+      <DependentUpon>Vinos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adhereso.resx">
+      <DependentUpon>Adhereso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion_Producto.resx">
       <DependentUpon>Administracion_Producto.cs</DependentUpon>
@@ -158,32 +245,71 @@
     <EmbeddedResource Include="Administracion_Reservacion.resx">
       <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Comanda.resx">
+      <DependentUpon>Administrar_Comanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Cuenta.resx">
+      <DependentUpon>Administrar_Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Mesa.resx">
       <DependentUpon>Administrar_Mesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Proveedor.resx">
       <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administra_Orden.resx">
-      <DependentUpon>Administra_Orden.cs</DependentUpon>
+    <EmbeddedResource Include="Administra_Orden_Compra.resx">
+      <DependentUpon>Administra_Orden_Compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Usuario.resx">
       <DependentUpon>Administrar_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="Bebidas.resx">
+      <DependentUpon>Bebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bocadillos.resx">
+      <DependentUpon>Bocadillos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega.resx">
+      <DependentUpon>Bodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carta_Presentacion.resx">
+      <DependentUpon>Carta_Presentacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mozo.resx">
+      <DependentUpon>Mozo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recepcion.resx">
+      <DependentUpon>Recepcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cocina.resx">
       <DependentUpon>Cocina.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ensalada.resx">
+      <DependentUpon>Ensalada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrada.resx">
+      <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas.resx">
+      <DependentUpon>Finanzas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fondos.resx">
+      <DependentUpon>Fondos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jugos_Naturales.resx">
+      <DependentUpon>Jugos_Naturales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Opciones_Admin.resx">
       <DependentUpon>Opciones_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Postres.resx">
+      <DependentUpon>Postres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +320,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sandwich_Hamburgesas.resx">
+      <DependentUpon>Sandwich_Hamburgesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sopas.resx">
+      <DependentUpon>Sopas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vinos.resx">
+      <DependentUpon>Vinos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

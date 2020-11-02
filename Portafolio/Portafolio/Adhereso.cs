@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Administra_Orden : MetroFramework.Forms.MetroForm
+    public partial class Adhereso : MetroFramework.Forms.MetroForm
     {
-        public Administra_Orden()
+        public Adhereso()
         {
             InitializeComponent();
         }
-
-
-
-
     }
 }

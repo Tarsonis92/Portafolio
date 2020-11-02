@@ -33,24 +33,26 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox5 = new MetroFramework.Controls.MetroTextBox();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.btnEliminar = new MetroFramework.Controls.MetroButton();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.dtpTiempo_Preparacion = new System.Windows.Forms.DateTimePicker();
+            this.btnFoto = new MetroFramework.Controls.MetroButton();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.lbxDescripcion = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTabla
             // 
             this.dgvTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTabla.Location = new System.Drawing.Point(107, 150);
+            this.dgvTabla.Location = new System.Drawing.Point(35, 275);
             this.dgvTabla.Name = "dgvTabla";
-            this.dgvTabla.Size = new System.Drawing.Size(563, 237);
+            this.dgvTabla.Size = new System.Drawing.Size(717, 152);
             this.dgvTabla.TabIndex = 4;
             // 
             // metroLabel1
@@ -83,20 +85,11 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(25, 97);
+            this.metroLabel4.Location = new System.Drawing.Point(25, 147);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(79, 19);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Descripcion:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(282, 101);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel5.TabIndex = 9;
-            this.metroLabel5.Text = "Id_Categoria:";
             // 
             // metroTextBox1
             // 
@@ -104,13 +97,6 @@
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.Size = new System.Drawing.Size(160, 23);
             this.metroTextBox1.TabIndex = 10;
-            // 
-            // metroTextBox2
-            // 
-            this.metroTextBox2.Location = new System.Drawing.Point(107, 97);
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.Size = new System.Drawing.Size(160, 23);
-            this.metroTextBox2.TabIndex = 11;
             // 
             // metroTextBox3
             // 
@@ -126,51 +112,87 @@
             this.metroTextBox4.Size = new System.Drawing.Size(94, 23);
             this.metroTextBox4.TabIndex = 13;
             // 
-            // metroTextBox5
-            // 
-            this.metroTextBox5.Location = new System.Drawing.Point(375, 101);
-            this.metroTextBox5.Name = "metroTextBox5";
-            this.metroTextBox5.Size = new System.Drawing.Size(138, 23);
-            this.metroTextBox5.TabIndex = 14;
-            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(248, 404);
+            this.btnAgregar.Location = new System.Drawing.Point(163, 222);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(128, 47);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(360, 404);
+            this.btnActualizar.Location = new System.Drawing.Point(310, 222);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(128, 47);
             this.btnActualizar.TabIndex = 16;
             this.btnActualizar.Text = "Actualizar";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(470, 404);
+            this.btnEliminar.Location = new System.Drawing.Point(453, 222);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(128, 47);
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(25, 109);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(132, 19);
+            this.metroLabel6.TabIndex = 18;
+            this.metroLabel6.Text = "Tiempo Preparacion:";
+            // 
+            // dtpTiempo_Preparacion
+            // 
+            this.dtpTiempo_Preparacion.Location = new System.Drawing.Point(163, 108);
+            this.dtpTiempo_Preparacion.Name = "dtpTiempo_Preparacion";
+            this.dtpTiempo_Preparacion.Size = new System.Drawing.Size(200, 20);
+            this.dtpTiempo_Preparacion.TabIndex = 19;
+            // 
+            // btnFoto
+            // 
+            this.btnFoto.Location = new System.Drawing.Point(444, 104);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(75, 23);
+            this.btnFoto.TabIndex = 20;
+            this.btnFoto.Text = "Foto";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(382, 108);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel7.TabIndex = 21;
+            this.metroLabel7.Text = "Imagen:";
+            // 
+            // lbxDescripcion
+            // 
+            this.lbxDescripcion.FormattingEnabled = true;
+            this.lbxDescripcion.Location = new System.Drawing.Point(110, 147);
+            this.lbxDescripcion.Name = "lbxDescripcion";
+            this.lbxDescripcion.Size = new System.Drawing.Size(560, 69);
+            this.lbxDescripcion.TabIndex = 22;
             // 
             // Administracion_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbxDescripcion);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.btnFoto);
+            this.Controls.Add(this.dtpTiempo_Preparacion);
+            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.metroTextBox5);
             this.Controls.Add(this.metroTextBox4);
             this.Controls.Add(this.metroTextBox3);
-            this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -190,14 +212,16 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
         private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox5;
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
         private MetroFramework.Controls.MetroButton btnEliminar;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.DateTimePicker dtpTiempo_Preparacion;
+        private MetroFramework.Controls.MetroButton btnFoto;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private System.Windows.Forms.ListBox lbxDescripcion;
     }
 }

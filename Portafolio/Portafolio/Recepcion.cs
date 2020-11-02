@@ -13,18 +13,18 @@ using System.Windows.Forms;
 
 namespace Portafolio
 {
-    public partial class Clientes : MetroFramework.Forms.MetroForm
+    public partial class Recepcion: MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
         OracleCommand command = new OracleCommand();
         OracleDataAdapter da = new OracleDataAdapter();
         Metodos_Tabla metodos = new Metodos_Tabla();
-        public Clientes()
+        public Recepcion()
         {
             InitializeComponent();
         }
 
-        public void mostrar_Clientes()
+        /*public void mostrar_Clientes()
         {
             con.Open();
             OracleCommand comando = new OracleCommand("MOSTRAR_CLIENTES", con);
@@ -36,16 +36,18 @@ namespace Portafolio
             metodos.mostrarTabla(comando, adapter);
             DataTable tabla = new DataTable();
             adapter.Fill(tabla);
-            dgvClientes.DataSource = tabla;
+            //dgvClientes.DataSource = tabla;
             con.Close();
-        }
+        }*/
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            mostrar_Clientes();
+            //mostrar_Clientes();
         }
 
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        /*private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvClientes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
@@ -57,6 +59,6 @@ namespace Portafolio
                 lbl_Correo.Text = dgvClientes.Rows[e.RowIndex].Cells["CORREO"].FormattedValue.ToString();
                 lbl_Id_Tipo.Text = dgvClientes.Rows[e.RowIndex].Cells["ID_TIPO"].FormattedValue.ToString();
             }
-        }
+        }*/
     }
 }

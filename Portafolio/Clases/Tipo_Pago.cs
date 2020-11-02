@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class Estado_Pago
+    class Tipo_Pago
     {
-        private int id_estado;
+        private int id_tipo;
         private string nombre;
 
-        public Estado_Pago(int id_estado, string nombre)
+        public Tipo_Pago(int id_tipo, string nombre)
         {
-            this.id_estado = id_estado;
+            this.id_tipo = id_tipo;
             this.nombre = nombre;
         }
 
-        public int Id_estado { get => id_estado; set => id_estado = value; }
+        public int Id_tipo { get => id_tipo; set => id_tipo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
     }
 }

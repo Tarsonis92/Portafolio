@@ -56,5 +56,18 @@
       <Name>Clases</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\Adhereso\" />
+    <Folder Include="Imagenes\Bebidas\" />
+    <Folder Include="Imagenes\Bocadillos\" />
+    <Folder Include="Imagenes\Ensalada\" />
+    <Folder Include="Imagenes\Entrada\" />
+    <Folder Include="Imagenes\Fondos\" />
+    <Folder Include="Imagenes\Jugos_Naturales\" />
+    <Folder Include="Imagenes\Postres\" />
+    <Folder Include="Imagenes\Sandwich_Hamburgesas\" />
+    <Folder Include="Imagenes\Sopas\" />
+    <Folder Include="Imagenes\Vinos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

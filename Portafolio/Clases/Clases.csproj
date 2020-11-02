@@ -42,23 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bodega.cs" />
     <Compile Include="Cate_Prod.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Comanda.cs" />
+    <Compile Include="Cuenta.cs" />
     <Compile Include="Deor_Comp.cs" />
-    <Compile Include="Deta_Factura.cs" />
+    <Compile Include="Deta_Coman.cs" />
     <Compile Include="Deta_Producto.cs" />
-    <Compile Include="Deta_Reser.cs" />
-    <Compile Include="Estado_Pago.cs" />
-    <Compile Include="Factura.cs" />
     <Compile Include="Ingrediente.cs" />
     <Compile Include="Mesa.cs" />
-    <Compile Include="Orden.cs" />
     <Compile Include="Orden_Compra.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
-    <Compile Include="Registro_Bodega.cs" />
     <Compile Include="Reservacion.cs" />
+    <Compile Include="Tipo_Pago.cs" />
     <Compile Include="Tipo_Usuario.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
