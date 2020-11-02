@@ -107,7 +107,7 @@ namespace BD
 
             con.Close();
         }
-        public List<Reservacion> Listar()
+        public List<Reservacion> Listar_reservacion()
         {
             List<Reservacion> usa = new List<Reservacion>();
             Reservacion dto = null;
@@ -241,7 +241,7 @@ namespace BD
         }
 
 
-            public List<Cliente> Listar()
+            public List<Cliente> Listar_cliente()
             {
                 List<Cliente> usa = new List<Cliente>();
                 Cliente dto = null;

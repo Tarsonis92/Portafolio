@@ -130,7 +130,7 @@ namespace BD
                                 dto.Mesa_id_mesa = dr["MESA_ID_MESA"].ToString();
                                 dto.Fecha_orden = dr["FECHA_ORDEN"].ToString();
                                 dto.Hora_entrada = dr["HORA_ENTRADA"].ToString();
-                                dto.Hora_salida = dr["P_HORA_SALIDA"].ToString();
+                                dto.Hora_salida = dr["HORA_SALIDA"].ToString();
                                 usa.Add(dto);
 
                             }
@@ -147,7 +147,7 @@ namespace BD
             return usa;
         }
 
-      ----------------
+      
 
         
         public void Actualizar_DetaComan(int id_detalle, int cantidad,int producto_id_producto,int comanda_id_comanda)
