@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Portafolio"
+    "\\Portafolio",
+    "\\Portafolio\\BD",
+    "\\Portafolio\\Clases",
+    "\\Portafolio\\Portafolio"
   ],
   "PreviewInSolutionExplorer": false
 }

@@ -33,13 +33,13 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtId_Ingrediente = new MetroFramework.Controls.MetroTextBox();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.btnEliminar = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.txtStock = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,12 +86,12 @@
             this.txtNombre.Size = new System.Drawing.Size(191, 23);
             this.txtNombre.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtpVencimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(478, 97);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpVencimiento.Location = new System.Drawing.Point(478, 97);
+            this.dtpVencimiento.Name = "dtpVencimiento";
+            this.dtpVencimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpVencimiento.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -108,6 +108,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(95, 42);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -116,6 +117,7 @@
             this.btnActualizar.Size = new System.Drawing.Size(95, 42);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -124,6 +126,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(95, 40);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // metroLabel5
             // 
@@ -134,12 +137,12 @@
             this.metroLabel5.TabIndex = 12;
             this.metroLabel5.Text = "Fecha Ingreso:";
             // 
-            // dateTimePicker2
+            // dtpIngreso
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(170, 95);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 13;
+            this.dtpIngreso.Location = new System.Drawing.Point(170, 95);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(200, 20);
+            this.dtpIngreso.TabIndex = 13;
             // 
             // metroLabel4
             // 
@@ -164,13 +167,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtpIngreso);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpVencimiento);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtId_Ingrediente);
             this.Controls.Add(this.metroLabel3);
@@ -191,13 +194,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtId_Ingrediente;
         private MetroFramework.Controls.MetroTextBox txtNombre;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
         private MetroFramework.Controls.MetroButton btnEliminar;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpIngreso;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox txtStock;
     }

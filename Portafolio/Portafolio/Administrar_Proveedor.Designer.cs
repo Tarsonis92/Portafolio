@@ -44,6 +44,7 @@
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.btnEliminar = new MetroFramework.Controls.MetroButton();
+            this.btnDetalle_Producto = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,33 +154,46 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(263, 152);
+            this.btnAgregar.Location = new System.Drawing.Point(183, 152);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(97, 42);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(363, 152);
+            this.btnActualizar.Location = new System.Drawing.Point(286, 152);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(97, 42);
             this.btnActualizar.TabIndex = 14;
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(479, 152);
+            this.btnEliminar.Location = new System.Drawing.Point(389, 152);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(97, 42);
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnDetalle_Producto
+            // 
+            this.btnDetalle_Producto.Location = new System.Drawing.Point(492, 152);
+            this.btnDetalle_Producto.Name = "btnDetalle_Producto";
+            this.btnDetalle_Producto.Size = new System.Drawing.Size(169, 42);
+            this.btnDetalle_Producto.TabIndex = 16;
+            this.btnDetalle_Producto.Text = "Administrar Detalle Producto";
+            this.btnDetalle_Producto.Click += new System.EventHandler(this.btnDetalle_Producto_Click);
             // 
             // Administrar_Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDetalle_Producto);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -222,5 +236,6 @@
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
         private MetroFramework.Controls.MetroButton btnEliminar;
+        private MetroFramework.Controls.MetroButton btnDetalle_Producto;
     }
 }

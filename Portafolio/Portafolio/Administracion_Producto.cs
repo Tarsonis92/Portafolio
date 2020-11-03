@@ -15,7 +15,7 @@ namespace Portafolio
     public partial class Administracion_Producto : MetroFramework.Forms.MetroForm
     {
         OracleConnection con = new OracleConnection("DATA SOURCE=xe; PASSWORD=porta_final;USER ID=porta_final");
-
+        DAOAdmin admin = new DAOAdmin();
         public Administracion_Producto()
         {
             InitializeComponent();
@@ -56,7 +56,19 @@ namespace Portafolio
         }
 
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            admin.Actualizar_Producto(Convert.ToInt32(txtId_Producto.Text),txtNombre.Text,Convert.ToInt32(txtPrecio.Text),dtpTiempo_Preparacion.Value,lbxDescripcion.Text,Convert.ToInt32(cbxId_Cat_Prod.SelectedValue));
+        }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            admin.Agregar_Producto(txtNombre.Text,Convert.ToInt32(txtPrecio.Text),dtpTiempo_Preparacion.Value,lbxDescripcion.Text,Convert.ToInt32(cbxId_Cat_Prod));
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            admin.Eliminar_Producto(Convert.ToInt32(txtId_Producto.Text));
+        }
     }
 }

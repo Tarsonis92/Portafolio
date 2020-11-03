@@ -44,8 +44,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Cate_Prod.cs" />
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\Comanda.cs" />
+    <Compile Include="Clases\Cuenta.cs" />
+    <Compile Include="Clases\Deor_Comp.cs" />
+    <Compile Include="Clases\Deta_Coman.cs" />
+    <Compile Include="Clases\Deta_Producto.cs" />
+    <Compile Include="Clases\Ingrediente.cs" />
+    <Compile Include="Clases\Mesa.cs" />
+    <Compile Include="Clases\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Clases\obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Clases\Orden_Compra.cs" />
+    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\Properties\AssemblyInfo.cs" />
+    <Compile Include="Clases\Proveedor.cs" />
+    <Compile Include="Clases\Reservacion.cs" />
+    <Compile Include="Clases\Tipo_pago.cs" />
+    <Compile Include="Clases\Tipo_Usuario.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Contract\Metodos_CRUD.cs" />
+    <Compile Include="DAOAdmin.cs" />
+    <Compile Include="DAOBodega.cs" />
+    <Compile Include="DAOCliente.cs" />
+    <Compile Include="DAOCocina.cs" />
+    <Compile Include="DAOFinanzas.cs" />
     <Compile Include="DAOUsuario.cs" />
     <Compile Include="Metodos_Tabla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Clases\bin\Release\" />
+    <Folder Include="Clases\obj\Debug\TempPE\" />
     <Folder Include="Imagenes\Adhereso\" />
     <Folder Include="Imagenes\Bebidas\" />
     <Folder Include="Imagenes\Bocadillos\" />
@@ -68,6 +94,20 @@
     <Folder Include="Imagenes\Sandwich_Hamburgesas\" />
     <Folder Include="Imagenes\Sopas\" />
     <Folder Include="Imagenes\Vinos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Clases\bin\Debug\Clases.dll" />
+    <Content Include="Clases\bin\Debug\Clases.pdb" />
+    <Content Include="Clases\Clases.csproj" />
+    <Content Include="Clases\obj\Debug\Clases.csproj.FileListAbsolute.txt" />
+    <Content Include="Clases\obj\Debug\Clases.dll" />
+    <Content Include="Clases\obj\Debug\Clases.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache" />
+    <None Include="Clases\obj\Debug\Clases.csprojAssemblyReference.cache" />
+    <None Include="Clases\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Clases\obj\Release\Clases.csprojAssemblyReference.cache" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

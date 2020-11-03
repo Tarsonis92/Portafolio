@@ -10,17 +10,23 @@ namespace Clases
     {
         private int id_ingrediente;
         private string nombre;
-        private string vencimiento;
+        private DateTime fecha_vencimiento;
+        private DateTime fecha_ingreso;
+        private int stock;
 
-        public Ingrediente(int id_ingrediente, string nombre, string vencimiento)
+        public Ingrediente(int id_ingrediente, string nombre, DateTime fecha_vencimiento, DateTime fecha_ingreso, int stock)
         {
             this.id_ingrediente = id_ingrediente;
             this.nombre = nombre;
-            this.vencimiento = vencimiento;
+            this.fecha_vencimiento = fecha_vencimiento;
+            this.fecha_ingreso = fecha_ingreso;
+            this.stock = stock;
         }
 
         public int Id_ingrediente { get => id_ingrediente; set => id_ingrediente = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Vencimiento { get => vencimiento; set => vencimiento = value; }
+        public DateTime Fecha_vencimiento { get => fecha_vencimiento; set => fecha_vencimiento = value; }
+        public DateTime Fecha_ingreso { get => fecha_ingreso; set => fecha_ingreso = value; }
+        public int Stock { get => stock; set => stock = value; }
     }
 }

@@ -40,13 +40,15 @@
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
             this.btnEliminar = new MetroFramework.Controls.MetroButton();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtCant_Personas = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(99, 72);
+            this.metroLabel1.Location = new System.Drawing.Point(93, 75);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(73, 19);
             this.metroLabel1.TabIndex = 0;
@@ -55,7 +57,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(398, 72);
+            this.metroLabel2.Location = new System.Drawing.Point(388, 75);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(79, 19);
             this.metroLabel2.TabIndex = 1;
@@ -64,7 +66,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(101, 120);
+            this.metroLabel3.Location = new System.Drawing.Point(190, 115);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 2;
@@ -73,7 +75,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(398, 111);
+            this.metroLabel4.Location = new System.Drawing.Point(464, 115);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(58, 19);
             this.metroLabel4.TabIndex = 3;
@@ -81,28 +83,28 @@
             // 
             // txtId_Reserva
             // 
-            this.txtId_Reserva.Location = new System.Drawing.Point(184, 72);
+            this.txtId_Reserva.Location = new System.Drawing.Point(181, 75);
             this.txtId_Reserva.Name = "txtId_Reserva";
             this.txtId_Reserva.Size = new System.Drawing.Size(187, 23);
             this.txtId_Reserva.TabIndex = 4;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(505, 71);
+            this.dtpFecha.Location = new System.Drawing.Point(473, 74);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 5;
             // 
             // txtId_Cliente
             // 
-            this.txtId_Cliente.Location = new System.Drawing.Point(184, 115);
+            this.txtId_Cliente.Location = new System.Drawing.Point(271, 115);
             this.txtId_Cliente.Name = "txtId_Cliente";
             this.txtId_Cliente.Size = new System.Drawing.Size(187, 23);
             this.txtId_Cliente.TabIndex = 6;
             // 
             // txtId_Mesa
             // 
-            this.txtId_Mesa.Location = new System.Drawing.Point(505, 111);
+            this.txtId_Mesa.Location = new System.Drawing.Point(545, 111);
             this.txtId_Mesa.Name = "txtId_Mesa";
             this.txtId_Mesa.Size = new System.Drawing.Size(200, 23);
             this.txtId_Mesa.TabIndex = 7;
@@ -117,33 +119,54 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(246, 171);
+            this.btnAgregar.Location = new System.Drawing.Point(225, 161);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(98, 47);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(371, 171);
+            this.btnActualizar.Location = new System.Drawing.Point(342, 161);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(97, 47);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(496, 171);
+            this.btnEliminar.Location = new System.Drawing.Point(462, 161);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(98, 47);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(49, 119);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "Cant Person:";
+            // 
+            // txtCant_Personas
+            // 
+            this.txtCant_Personas.Location = new System.Drawing.Point(133, 115);
+            this.txtCant_Personas.Name = "txtCant_Personas";
+            this.txtCant_Personas.Size = new System.Drawing.Size(51, 23);
+            this.txtCant_Personas.TabIndex = 13;
             // 
             // Administracion_Reservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCant_Personas);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
@@ -178,5 +201,7 @@
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
         private MetroFramework.Controls.MetroButton btnEliminar;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtCant_Personas;
     }
 }

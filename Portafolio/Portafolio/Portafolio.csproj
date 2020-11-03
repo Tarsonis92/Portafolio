@@ -81,6 +81,12 @@
     <Compile Include="Administracion_Reservacion.Designer.cs">
       <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrar_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Clientes.Designer.cs">
+      <DependentUpon>Administrar_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrar_Comanda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,18 @@
     <Compile Include="Administrar_Cuenta.Designer.cs">
       <DependentUpon>Administrar_Cuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrar_Deta_Coman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Deta_Coman.Designer.cs">
+      <DependentUpon>Administrar_Deta_Coman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Deta_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Deta_Producto.Designer.cs">
+      <DependentUpon>Administrar_Deta_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrar_Mesa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +122,12 @@
     </Compile>
     <Compile Include="Administrar_Proveedor.Designer.cs">
       <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administra_Deor_Comp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administra_Deor_Comp.Designer.cs">
+      <DependentUpon>Administra_Deor_Comp.cs</DependentUpon>
     </Compile>
     <Compile Include="Administra_Orden_Compra.cs">
       <SubType>Form</SubType>
@@ -245,17 +269,29 @@
     <EmbeddedResource Include="Administracion_Reservacion.resx">
       <DependentUpon>Administracion_Reservacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Clientes.resx">
+      <DependentUpon>Administrar_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Comanda.resx">
       <DependentUpon>Administrar_Comanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Cuenta.resx">
       <DependentUpon>Administrar_Cuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Deta_Coman.resx">
+      <DependentUpon>Administrar_Deta_Coman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Deta_Producto.resx">
+      <DependentUpon>Administrar_Deta_Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Mesa.resx">
       <DependentUpon>Administrar_Mesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Proveedor.resx">
       <DependentUpon>Administrar_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administra_Deor_Comp.resx">
+      <DependentUpon>Administra_Deor_Comp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administra_Orden_Compra.resx">
       <DependentUpon>Administra_Orden_Compra.cs</DependentUpon>

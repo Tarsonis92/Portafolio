@@ -30,7 +30,7 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.txtId_Orden = new MetroFramework.Controls.MetroTextBox();
+            this.txtId_Orden_Compra = new MetroFramework.Controls.MetroTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new MetroFramework.Controls.MetroButton();
             this.btnActualizar = new MetroFramework.Controls.MetroButton();
@@ -40,6 +40,12 @@
             this.cbxEstado_Pago = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.lbxObservacion = new System.Windows.Forms.ListBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtId_Proveedor = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.txtId_Usuario = new MetroFramework.Controls.MetroTextBox();
+            this.cbxId_Tipo = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,12 +67,12 @@
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Fecha Emision:";
             // 
-            // txtId_Orden
+            // txtId_Orden_Compra
             // 
-            this.txtId_Orden.Location = new System.Drawing.Point(96, 65);
-            this.txtId_Orden.Name = "txtId_Orden";
-            this.txtId_Orden.Size = new System.Drawing.Size(151, 23);
-            this.txtId_Orden.TabIndex = 2;
+            this.txtId_Orden_Compra.Location = new System.Drawing.Point(96, 65);
+            this.txtId_Orden_Compra.Name = "txtId_Orden_Compra";
+            this.txtId_Orden_Compra.Size = new System.Drawing.Size(151, 23);
+            this.txtId_Orden_Compra.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -83,6 +89,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(114, 51);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -91,6 +98,7 @@
             this.btnActualizar.Size = new System.Drawing.Size(114, 51);
             this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -99,6 +107,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(114, 51);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dtpFecha_Emision
             // 
@@ -139,14 +148,70 @@
             this.lbxObservacion.FormattingEnabled = true;
             this.lbxObservacion.Location = new System.Drawing.Point(136, 117);
             this.lbxObservacion.Name = "lbxObservacion";
-            this.lbxObservacion.Size = new System.Drawing.Size(675, 82);
+            this.lbxObservacion.Size = new System.Drawing.Size(332, 82);
             this.lbxObservacion.TabIndex = 12;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(502, 117);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel5.TabIndex = 13;
+            this.metroLabel5.Text = "Id Proveedor:";
+            // 
+            // txtId_Proveedor
+            // 
+            this.txtId_Proveedor.Location = new System.Drawing.Point(598, 113);
+            this.txtId_Proveedor.Name = "txtId_Proveedor";
+            this.txtId_Proveedor.Size = new System.Drawing.Size(183, 23);
+            this.txtId_Proveedor.TabIndex = 14;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(502, 150);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel6.TabIndex = 15;
+            this.metroLabel6.Text = "Id Usuario:";
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(502, 180);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel7.TabIndex = 16;
+            this.metroLabel7.Text = "Id Tipo:";
+            // 
+            // txtId_Usuario
+            // 
+            this.txtId_Usuario.Location = new System.Drawing.Point(598, 145);
+            this.txtId_Usuario.Name = "txtId_Usuario";
+            this.txtId_Usuario.Size = new System.Drawing.Size(183, 23);
+            this.txtId_Usuario.TabIndex = 17;
+            // 
+            // cbxId_Tipo
+            // 
+            this.cbxId_Tipo.FormattingEnabled = true;
+            this.cbxId_Tipo.ItemHeight = 23;
+            this.cbxId_Tipo.Location = new System.Drawing.Point(598, 174);
+            this.cbxId_Tipo.Name = "cbxId_Tipo";
+            this.cbxId_Tipo.Size = new System.Drawing.Size(121, 29);
+            this.cbxId_Tipo.TabIndex = 18;
             // 
             // Administra_Orden_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 523);
+            this.Controls.Add(this.cbxId_Tipo);
+            this.Controls.Add(this.txtId_Usuario);
+            this.Controls.Add(this.metroLabel7);
+            this.Controls.Add(this.metroLabel6);
+            this.Controls.Add(this.txtId_Proveedor);
+            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.lbxObservacion);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.cbxEstado_Pago);
@@ -156,7 +221,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtId_Orden);
+            this.Controls.Add(this.txtId_Orden_Compra);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Administra_Orden_Compra";
@@ -171,7 +236,7 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox txtId_Orden;
+        private MetroFramework.Controls.MetroTextBox txtId_Orden_Compra;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroButton btnAgregar;
         private MetroFramework.Controls.MetroButton btnActualizar;
@@ -181,5 +246,11 @@
         private MetroFramework.Controls.MetroComboBox cbxEstado_Pago;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.ListBox lbxObservacion;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtId_Proveedor;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroTextBox txtId_Usuario;
+        private MetroFramework.Controls.MetroComboBox cbxId_Tipo;
     }
 }
